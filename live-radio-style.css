@@ -1,0 +1,503 @@
+/*-------------------------------------
+  CSS Variables & Global Settings
+--------------------------------------*/
+:root {
+  --primary-color: #2e85ff;
+  --accent-color: #f0a500;
+  --text-color: #333;
+  --bg-color: #f1faee;
+  --light-bg: #f8f9fa;
+  --border-color: #ccc;
+  --font-family: Arial, sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/*-------------------------------------
+  Entry Section & Header (Tabs)
+--------------------------------------*/
+.entry-section {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  padding: 10px;
+  margin-top: -30px;
+}
+
+.entry-header {
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.entry-tabs {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.entry-tabs li {
+  margin: 0 5px;
+}
+
+.entry-button {
+  background: transparent;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.entry-button:hover {
+  background: #fff;
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.entry-button.active {
+  font-weight: bold;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/*-------------------------------------
+  Country Row
+--------------------------------------*/
+.country-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 5px 10px;
+  gap: 10px;
+  background: var(--light-bg);
+  margin-bottom: 10px;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.country-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.country-row::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.country-button {
+  flex: 0 0 auto;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+}
+
+.country-button:hover {
+  background: #e2e6ea;
+  transform: scale(1.03);
+}
+
+.country-button.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.country-name {
+  white-space: nowrap;
+}
+
+/*-------------------------------------
+  Content Container
+--------------------------------------*/
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.container h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/*-------------------------------------
+  Details Section (Grid for Radio Stations)
+--------------------------------------*/
+.details-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  background: linear-gradient(135deg, #a8dadc, var(--bg-color));
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/*-------------------------------------
+  Radio Station Box (Individual)
+--------------------------------------*/
+.radio-station {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.radio-station:hover {
+  transform: scale(1.02);
+}
+
+.station-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.station-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.station-details p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/*-------------------------------------
+  Details View (Full-Page Modal Style)
+--------------------------------------*/
+.details-view {
+  position: fixed;
+  top: 64px;
+  left: 200px;
+  width: 87%;
+  height: calc(100% - 64px);
+  overflow-y: auto;
+  background: #fff;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.back-button,
+.play-button {
+  background: #ccc;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease;
+  margin-right: 10px;
+}
+
+.back-button:hover,
+.play-button:hover {
+  background: #bbb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .details-view {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+}
+
+/*-------------------------------------
+  Details Top Section
+--------------------------------------*/
+.details-top {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.details-top-left {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.details-top-left img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.details-top-right {
+  flex: 2;
+}
+
+.details-top-right h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.details-top-right p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/*-------------------------------------
+  Play Button Section
+--------------------------------------*/
+.play-button-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#play-button {
+  background: var(--accent-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background var(--transition-speed) ease;
+}
+
+#play-button:hover {
+  background: #e0a000;
+}
+
+/*-------------------------------------
+  Details Bottom Section
+--------------------------------------*/
+.details-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.details-bottom-left,
+.details-bottom-right {
+  flex: 1;
+  min-width: 280px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles */
+.details-bottom-left h4,
+.details-bottom-right h4 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #2e85ff;
+  text-align: center;
+}
+
+/*-------------------------------------
+  Comment Form Styles
+--------------------------------------*/
+.details-bottom-right {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+  max-width: 550px;
+  margin: auto;
+}
+
+.comment-form input,
+.comment-form select,
+.comment-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.comment-form input:focus,
+.comment-form select:focus,
+.comment-form textarea:focus {
+  border-color: #2e85ff;
+  box-shadow: 0px 0px 5px rgba(46, 133, 255, 0.5);
+}
+
+.comment-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.comment-form button {
+  width: 100%;
+  background: #2e85ff;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.comment-form button:hover {
+  background: #1d3557;
+  transform: scale(1.05);
+}
+
+/*-------------------------------------
+  Celebration Alert Box (Restyled)
+--------------------------------------*/
+#celebration-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(173, 216, 230, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.message-sent-hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+/* Alert Box */
+.alert-box {
+  background: #e1f5fe;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  animation: fadeIn 0.4s ease-in-out;
+  position: relative;
+}
+
+.alert-box h2 {
+  color: #0288d1;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.alert-box p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.alert-box button {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.alert-box button:hover {
+  background: #0277bd;
+}
+
+/*-------------------------------------
+  Confetti
+--------------------------------------*/
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff4757;
+  animation: fall linear infinite;
+}
+
+.confetti-piece:nth-child(odd) {
+  background: #2ed573;
+}
+.confetti-piece:nth-child(even) {
+  background: #ff9f43;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*-------------------------------------
+  Responsive Adjustments
+--------------------------------------*/
+@media (max-width: 768px) {
+  #celebration-alert {
+    padding: 10px;
+  }
+}

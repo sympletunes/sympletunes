@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en-US" class="open-player">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>Symple Tunes</title>
+    <meta name="robots" content="max-image-preview:large">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" id="wp-block-library-css" href="./style.min.css" media="all">
+    <link rel="stylesheet" id="edd-blocks-css" href="./edd-blocks.css" media="all">
+    <link rel="stylesheet" id="loop-block-style-css" href="./style(1).min.css" media="all">
+    <link rel="stylesheet" id="play-block-style-css" href="./style(2).min.css" media="all">
+    <link rel="stylesheet" id="edd-styles-css" href="./edd.min.css" media="all">
+    <link rel="stylesheet" id="parent-style-css" href="./style.css" media="all">
+    <link rel="stylesheet" id="ffl-style-css" href="./style(1).css" media="all">
+    <link rel="stylesheet" id="ffl-custom-style-css" href="./theme.css" media="all">
+    <link rel="stylesheet" id="ffl-edd-css-css" href="./edd.css" media="all">
+
+    <!-- Inline Styles -->
+    <style id="wp-emoji-styles-inline-css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <style id="wp-block-library-theme-inline-css">
+        .wp-block-audio :where(figcaption) {
+            color: #555;
+            font-size: 13px;
+            text-align: center
+        }
+
+        .is-dark-theme .wp-block-audio :where(figcaption) {
+            color: #ffffffa6
+        }
+
+        .wp-block-audio {
+            margin: 0 0 1em
+        }
+
+        .wp-block-code {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: Menlo, Consolas, monaco, monospace;
+            padding: .8em 1em
+        }
+
+        .wp-block-embed :where(figcaption) {
+            color: #555;
+            font-size: 13px;
+            text-align: center
+        }
+
+        .is-dark-theme .wp-block-embed :where(figcaption) {
+            color: #ffffffa6
+        }
+
+        .wp-block-embed {
+            margin: 0 0 1em
+        }
+
+        .blocks-gallery-caption {
+            color: #555;
+            font-size: 13px;
+            text-align: center
+        }
+
+        .is-dark-theme .blocks-gallery-caption {
+            color: #ffffffa6
+        }
+
+        :root :where(.wp-block-image figcaption) {
+            color: #555;
+            font-size: 13px;
+            text-align: center
+        }
+
+        .is-dark-theme :root :where(.wp-block-image figcaption) {
+            color: #ffffffa6
+        }
+
+        .wp-block-image {
+            margin: 0 0 1em
+        }
+
+        .wp-block-pullquote {
+            border-bottom: 4px solid;
+            border-top: 4px solid;
+            color: currentColor;
+            margin-bottom: 1.75em
+        }
+
+        .wp-block-pullquote cite,
+        .wp-block-pullquote footer,
+        .wp-block-pullquote__citation {
+            color: currentColor;
+            font-size: .8125em;
+            font-style: normal;
+            text-transform: uppercase
+        }
+
+        .wp-block-quote {
+            border-left: .25em solid;
+            margin: 0 0 1.75em;
+            padding-left: 1em
+        }
+
+        .wp-block-quote cite,
+        .wp-block-quote footer {
+            color: currentColor;
+            font-size: .8125em;
+            font-style: normal;
+            position: relative
+        }
+
+        .wp-block-quote:where(.has-text-align-right) {
+            border-left: none;
+            border-right: .25em solid;
+            padding-left: 0;
+            padding-right: 1em
+        }
+
+        .wp-block-quote:where(.has-text-align-center) {
+            border: none;
+            padding-left: 0
+        }
+
+        .wp-block-quote.is-large,
+        .wp-block-quote.is-style-large,
+        .wp-block-quote:where(.is-style-plain) {
+            border: none
+        }
+
+        .wp-block-search .wp-block-search__label {
+            font-weight: 700
+        }
+
+        .wp-block-search__button {
+            border: 1px solid #ccc;
+            padding: .375em .625em
+        }
+
+        :where(.wp-block-group.has-background) {
+            padding: 1.25em 2.375em
+        }
+
+        .wp-block-separator.has-css-opacity {
+            opacity: .4
+        }
+
+        .wp-block-separator {
+            border: none;
+            border-bottom: 2px solid;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .wp-block-separator.has-alpha-channel-opacity {
+            opacity: 1
+        }
+
+        .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+            width: 100px
+        }
+
+        .wp-block-separator.has-background:not(.is-style-dots) {
+            border-bottom: none;
+            height: 1px
+        }
+
+        .wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+            height: 2px
+        }
+
+        .wp-block-table {
+            margin: 0 0 1em
+        }
+
+        .wp-block-table td,
+        .wp-block-table th {
+            word-break: normal
+        }
+
+        .wp-block-table :where(figcaption) {
+            color: #555;
+            font-size: 13px;
+            text-align: center
+        }
+
+        .is-dark-theme .wp-block-table :where(figcaption) {
+            color: #ffffffa6
+        }
+
+        .wp-block-video :where(figcaption) {
+            color: #555;
+            font-size: 13px;
+            text-align: center
+        }
+
+        .is-dark-theme .wp-block-video :where(figcaption) {
+            color: #ffffffa6
+        }
+
+        .wp-block-video {
+            margin: 0 0 1em
+        }
+
+        :root :where(.wp-block-template-part.has-background) {
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 1.25em 2.375em
+        }
+    </style>
+    <style id="classic-theme-styles-inline-css">
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+    <style id="global-styles-inline-css">
+        :root {
+            --wp--preset--aspect-ratio--square: 1;
+            --wp--preset--aspect-ratio--4-3: 4/3;
+            --wp--preset--aspect-ratio--3-4: 3/4;
+            --wp--preset--aspect-ratio--3-2: 3/2;
+            --wp--preset--aspect-ratio--2-3: 2/3;
+            --wp--preset--aspect-ratio--16-9: 16/9;
+            --wp--preset--aspect-ratio--9-16: 9/16;
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1)
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        :where(.is-layout-grid) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .is-layout-flex>:is(*, div) {
+            margin: 0;
+        }
+
+        body .is-layout-grid {
+            display: grid;
+        }
+
+        .is-layout-grid>:is(*, div) {
+            margin: 0;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        :root :where(.wp-block-pullquote) {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="./jquery.min.js.download" id="jquery-core-js"></script>
+    <script src="./jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
+    <script src="./zxcvbn-async.min.js.download" id="zxcvbn-async-js"></script>
+    <script>
+        var _zxcvbnSettings = {
+            "src": "https:\/\/demo.avtheme.com\/musik\/wp-includes\/js\/zxcvbn.min.js"
+        };
+    </script>
+
+    <!-- Meta -->
+    <link rel="https://api.w.org/" href="sympletunes-homepage.htmlwp-json/">
+    <link rel="alternate" title="JSON" type="application/json" href="sympletunes-homepage.htmlwp-json/wp/v2/pages/123">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="sympletunes-homepage.htmlxmlrpc.php?rsd">
+    <meta name="generator" content="WordPress 6.7.1">
+    <link rel="canonical" href="sympletunes-homepage.html">
+    <link rel="shortlink" href="sympletunes-homepage.html">
+    <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="sympletunes-homepage.htmlwp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.avtheme.com%2Fmusik%2F">
+    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="sympletunes-homepage.htmlwp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.avtheme.com%2Fmusik%2F&amp;format=xml">
+    <meta name="generator" content="Easy Digital Downloads v3.2.3">
+    <link rel="icon" href="sympletunes-homepage.htmlwp-content/uploads/sites/7/2023/10/cropped-screenshot-32x32.png" sizes="32x32">
+    <link rel="icon" href="sympletunes-homepage.htmlwp-content/uploads/sites/7/2023/10/cropped-screenshot-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="sympletunes-homepage.htmlwp-content/uploads/sites/7/2023/10/cropped-screenshot-180x180.png">
+    <meta name="msapplication-TileImage" content="sympletunes-homepage.htmlwp-content/uploads/sites/7/2023/10/cropped-screenshot-270x270.png">
+</head>
+
+<body class="page-template-default page page-id-132 wp-custom-logo wp-embed-responsive edd-js-none single  has-menu-primary primary-menu-has-icon with-mobile-menu is-player-theme-">
+
+    <!-- Sprite SVG -->
+    <div hidden="" id="plyr-sprite">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <symbol id="plyr-play" viewBox="0 0 18 18"><path d="M16.562 8.1l-11.692-7.875c-0.818-0.562-1.87 0-1.87 0.9v15.75c0 0.9 1.052 1.462 1.87 0.9l11.693-7.875c0.584-0.45 0.584-1.35 0-1.8z"></path></symbol>
+            <symbol id="plyr-pause" viewBox="0 0 18 18"><path d="M6 1H3c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1-1zM12 1c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1h-3z"></path></symbol>
+            <symbol id="plyr-prev" viewBox="0 0 24 24"><path d="M8 11.3333L18.2227 4.51823C18.4524 4.36506 18.7628 4.42714 18.916 4.65691C18.9708 4.73904 19 4.83555 19 4.93426V19.0657C19 19.3419 18.7761 19.5657 18.5 19.5657C18.4013 19.5657 18.3048 19.5365 18.2227 19.4818L8 12.6667V19C8 19.5523 7.55228 20 7 20C6.44772 20 6 19.5523 6 19V5C6 4.44772 6.44772 4 7 4C7.55228 4 8 4.44772 8 5V11.3333Z"></path></symbol>
+            <symbol id="plyr-next" viewBox="0 0 24 24"><path d="M16 12.6667L5.77735 19.4818C5.54759 19.6349 5.23715 19.5729 5.08397 19.3431C5.02922 19.261 5 19.1645 5 19.0657V4.93426C5 4.65812 5.22386 4.43426 5.5 4.43426C5.59871 4.43426 5.69522 4.46348 5.777354.51823L16 11.3333V5C16 4.44772 16.4477 4 17 4C17.5523 4 18 4.44772 18 5V19C18 19.5523 17.5523 20 17 20C16.4477 20 16 19.5523 16 19V12.6667Z"></path></symbol>
+            <symbol id="plyr-shuffle" viewBox="0 0 24 24"><path d="M16.2 7h2.85l-1.3 1.3c-.4.4-.4 1 0 1.4q.375.3.75.3c.25 0 .5-.1.7-.3l3-3 .15-.15.05-.05c0-.025.013-.037.025-.05s.025-.025.025-.05q-.001-.03.004-.044c.005-.015.017-.027.046-.056q-.001-.03.004-.044c.005-.015.017-.027.046-.056.05-.15.05-.25 0-.4 0-.05 0-.05-.05-.1q.001-.03-.004-.044c-.005-.015-.017-.027-.046-.056 0-.025-.012-.037-.025-.05-.012-.013-.025-.025-.025-.05 0 0 0-.05-.05-.05l-.15-.15-3-3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L19.1 5h-2.85c-1.75 0-3.3.9-4.25 2.35L6.85 15.6c-.55.9-1.5 1.4-2.55 1.4H2.5c-.55 0-1 .45-1 1s.45 1 1 1h1.8c1.75 0 3.3-.9 4.25-2.35L13.7 8.4c.5-.85 1.5-1.4 2.5-1.4M2.5 7h1.8c1.05 0 2 .5 2.55 1.4l.45.75 1.2-1.9C7.55 5.8 6 4.95 4.3 4.95H2.5c-.55 0-1 .45-1 1 0 .6.45 1.05 1 1.05m19.95 11.2v.05c0 .05 0 .1-.05.1v.05c-.05.1-.1.2-.2.3l-3 3c-.2.2-.45.3-.7.3q-.375 0-.75-.3c-.4-.4-.4-1 0-1.4l1.3-1.3H16.2c-1.7 0-3.25-.85-4.2-2.3l1.25-1.9.45.75c.55.9 1.5 1.4 2.55 1.4h2.85l-1.3-1.3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l3 3c.1.1.15.2.2.3v.05c.05.05.05.1.05.15v.05c.05.15.05.25 0 .4Z"></path></symbol>
+            <symbol id="plyr-repeat" viewBox="0 0 24 24"><path d="M16.293 1.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 1 1-1.414-1.414L17.586 6H8.5c-3.298 0-6 2.702-6 6a1 1 0 1 1-2 0c0-4.402 3.598-8 8-8h9.086l-1.293-1.293a1 1 0 0 1 0-1.414M23.5 12a1 1 0 1 0-2 0c0 3.298-2.702 6-6 6H6.414l1.293-1.293a1 1 0 1 0-1.414-1.414l-3 3a1 1 0 0 0 0 1.414l3 3a1 1 0 0 0 1.414-1.414L6.414 20H15.5c4.402 0 8-3.598 8-8Z"></path></symbol>
+            <symbol id="plyr-repeat-once" viewBox="0 0 24 24"><path d="M16.293 1.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 1 1-1.414-1.414L17.586 6H8.5c-3.298 0-6 2.702-6 6a1 1 0 1 1-2 0c0-4.402 3.598-8 8-8h9.086l-1.293-1.293a1 1 0 0 1 0-1.414M23.5 12a1 1 0 1 0-2 0c0 3.298-2.702 6-6 6H6.414l1.293-1.293a1 1 0 1 0-1.414-1.414l-3 3a1 1 0 0 0 0 1.414l3 3a1 1 0 0 0 1.414-1.414L6.414 20H15.5c4.402 0 8-3.598 8-8ZM11 8H13V16H11V10H9V9L11 8Z"></path></symbol>
+            <symbol id="plyr-restart" viewBox="0 0 24 24"><path d="M12 4C14.7486 4 17.1749 5.38626 18.6156 7.5H16V9.5H22V3.5H20V5.99936C18.1762 3.57166 15.2724 2 12 2C6.47715 2 2 6.47715 2 12H4C4 7.58172 7.58172 4 12 4ZM20 12C20 16.4183 16.4183 20 12 20C9.25144 20 6.82508 18.6137 5.38443 16.5H8V14.5H2V20.5H4V18.0006C5.82381 20.4283 8.72764 22 12 22C17.5228 22 22 17.5228 22 12H20Z"></path></symbol>
+            <symbol id="plyr-rewind" viewBox="84.21 19.76 99.61 109.08"><path d="M84.205 79.035c0 27.246 22.608 49.804 49.805 49.804 27.246 0 49.805-22.558 49.805-49.804 0-24.024-17.53-44.385-40.381-48.877v-6.934c0-3.467-2.393-4.395-5.03-2.49l-15.576 10.888c-2.246 1.563-2.295 3.907 0 5.518l15.528 10.938c2.685 1.953 5.078 1.025 5.078-2.49v-6.934c18.457 4.199 32.031 20.605 32.031 40.38 0 23.047-18.408 41.504-41.455 41.504-23.047 0-41.553-18.457-41.504-41.503.049-13.868 6.787-26.124 17.188-33.545 2.002-1.514 2.636-3.809 1.416-5.86-1.221-2.002-3.907-2.539-6.055-.879-12.549 9.131-20.85 23.877-20.85 40.284Zm35.547 20.02c1.904 0 3.125-1.32 3.125-3.37v-30.81c0-2.49-1.27-3.81-3.467-3.81-1.367 0-2.343.44-4.052 1.612l-6.739 4.541c-1.123.83-1.66 1.71-1.66 2.832 0 1.611 1.27 2.979 2.881 2.979.928 0 1.416-.196 2.344-.928l4.59-3.37v26.954c0 2.002 1.172 3.37 2.978 3.37Zm24.805.585c8.105 0 13.476-5.225 13.476-13.086 0-7.178-4.834-12.305-11.816-12.305-2.88 0-6.006 1.319-7.47 3.516l.83-10.547h14.648c1.416 0 2.637-1.172 2.637-2.832s-1.221-2.734-2.637-2.734H138.6c-2.54 0-3.955 1.465-4.2 4.052l-1.025 14.063c-.244 2.441 1.026 3.613 3.174 3.613 1.611 0 2.295-.293 3.71-1.367 1.856-1.709 3.37-2.393 5.274-2.393 3.809 0 6.348 2.784 6.348 7.032 0 4.297-2.978 7.422-7.031 7.422-2.881 0-5.371-1.66-6.64-4.2-.733-1.27-1.612-1.953-2.833-1.953-1.611 0-2.734 1.172-2.734 2.832 0 .684.146 1.319.39 1.953 1.319 3.516 5.616 6.934 11.524 6.934Z"></path></symbol>
+            <symbol id="plyr-forward" viewBox="84.21 19.78 99.61 109.06"><path d="M84.205 79.035c0 27.246 22.608 49.804 49.805 49.804 27.246 0 49.805-22.558 49.805-49.804 0-16.407-8.301-31.153-20.85-40.284-2.148-1.66-4.834-1.123-6.055.88-1.22 2.05-.586 4.345 1.416 5.859 10.4 7.421 17.139 19.677 17.188 33.545.049 23.046-18.457 41.503-41.504 41.503-23.047 0-41.455-18.457-41.455-41.503 0-19.776 13.574-36.182 32.031-40.381v6.982c0 3.467 2.393 4.395 5.078 2.49L145.24 37.19c2.198-1.514 2.247-3.858 0-5.469l-15.527-10.937c-2.734-1.954-5.127-1.026-5.127 2.49v6.885c-22.851 4.492-40.38 24.853-40.38 48.877ZM118.58 99.59c7.666 0 13.135-4.638 13.135-11.23 0-4.541-3.027-8.301-7.324-9.082 3.467-.977 6.103-4.59 6.103-8.692 0-5.859-4.785-9.96-11.62-9.96-5.909 0-10.84 3.32-11.866 8.056a6.314 6.314 0 0 0-.195 1.611c0 1.758 1.123 2.979 2.783 2.979 1.416 0 2.295-.733 2.832-2.295 1.025-3.076 3.076-4.688 6.299-4.688 3.418 0 5.761 2.051 5.761 5.03 0 3.125-2.343 5.42-5.81 5.42h-2.1c-1.611 0-2.685 1.123-2.685 2.832 0 1.611 1.123 2.832 2.685 2.832h2.344c4.102 0 6.69 2.295 6.69 5.713 0 3.32-2.93 5.859-6.983 5.859-3.418 0-5.86-1.709-6.933-4.736-.586-1.612-1.465-2.295-2.784-2.295-1.66 0-2.832 1.27-2.832 2.978 0 .537.05 1.074.196 1.612 1.074 4.59 6.347 8.056 12.304 8.056Zm31.494 0c8.106 0 13.428-7.666 13.428-19.385 0-11.816-5.322-19.58-13.428-19.58-8.154 0-13.427 7.715-13.427 19.58 0 11.72 5.322 19.385 13.427 19.385Zm0-5.908c-4.296 0-7.08-5.127-7.08-13.477 0-8.496 2.735-13.671 7.08-13.671 4.346 0 7.032 5.126 7.032 13.671 0 8.35-2.735 13.477-7.032 13.477Z"></path></symbol>
+            <symbol id="plyr-settings" viewBox="0 0 24 24"><path d="M3.33946 17.0002C2.90721 16.2515 2.58277 15.4702 2.36133 14.6741C3.3338 14.1779 3.99972 13.1668 3.99972 12.0002C3.99972 10.8345 3.3348 9.824 2.36353 9.32741C2.81025 7.71651 3.65857 6.21627 4.86474 4.99001C5.7807 5.58416 6.98935 5.65534 7.99972 5.072C9.01009 4.48866 9.55277 3.40635 9.4962 2.31604C11.1613 1.8846 12.8847 1.90004 14.5031 2.31862C14.4475 3.40806 14.9901 4.48912 15.9997 5.072C17.0101 5.65532 18.2187 5.58416 19.1346 4.99007C19.7133 5.57986 20.2277 6.25151 20.66 7.00021C21.0922 7.7489 21.4167 8.53025 21.6381 9.32628C20.6656 9.82247 19.9997 10.8336 19.9997 12.0002C19.9997 13.166 20.6646 14.1764 21.6359 14.673C21.1892 16.2839 20.3409 17.7841 19.1347 19.0104C18.2187 18.4163 17.0101 18.3451 15.9997 18.9284C14.9893 19.5117 14.4467 20.5941 14.5032 21.6844C12.8382 22.1158 11.1148 22.1004 9.49633 21.6818C9.55191 20.5923 9.00929 19.5113 7.99972 18.9284C6.98938 18.3451 5.78079 18.4162 4.86484 19.0103C4.28617 18.4205 3.77172 17.7489 3.33946 17.0002ZM8.99972 17.1964C10.0911 17.8265 10.8749 18.8227 11.2503 19.9659C11.7486 20.0133 12.2502 20.014 12.7486 19.9675C13.1238 18.8237 13.9078 17.8268 14.9997 17.1964C16.0916 16.5659 17.347 16.3855 18.5252 16.6324C18.8146 16.224 19.0648 15.7892 19.2729 15.334C18.4706 14.4373 17.9997 13.2604 17.9997 12.0002C17.9997 10.74 18.4706 9.5632 19.2729 8.6665C19.1688 8.4405 19.0538 8.21822 18.9279 8.00021C18.802 7.78219 18.667 7.57148 18.5233 7.36842C17.3457 7.61476 16.0911 7.43414 14.9997 6.80405C13.9083 6.17395 13.1246 5.17768 12.7491 4.03455C12.2509 3.98714 11.7492 3.98646 11.2509 4.03292C10.8756 5.17671 10.0916 6.17364 8.99972 6.80405C7.9078 7.43447 6.65245 7.61494 5.47428 7.36803C5.18485 7.77641 4.93463 8.21117 4.72656 8.66637C5.52881 9.56311 5.99972 10.74 5.99972 12.0002C5.99972 13.2604 5.52883 14.4372 4.72656 15.3339C4.83067 15.5599 4.94564 15.7822 5.07152 16.0002C5.19739 16.2182 5.3324 16.4289 5.47612 16.632C6.65377 16.3857 7.90838 16.5663 8.99972 17.1964ZM11.9997 15.0002C10.3429 15.0002 8.99972 13.6571 8.99972 12.0002C8.99972 10.3434 10.3429 9.00021 11.9997 9.00021C13.6566 9.00021 14.9997 10.3434 14.9997 12.0002C14.9997 13.6571 13.6566 15.0002 11.9997 15.0002ZM11.9997 13.0002C12.552 13.0002 12.9997 12.5525 12.9997 12.0002C12.9997 11.4479 12.552 11.0002 11.9997 11.0002C11.4474 11.0002 10.9997 11.4479 10.9997 12.0002C10.9997 12.5525 11.4474 13.0002 11.9997 13.0002Z"></path></symbol>
+            <symbol id="plyr-captions-on" viewBox="0 0 24 24"><path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM9 8C6.792 8 5 9.792 5 12C5 14.208 6.792 16 9 16C10.1 16 11.1 15.55 11.828 14.828L10.4144 13.4144C10.0525 13.7762 9.5525 14 9 14C7.895 14 7 13.105 7 12C7 10.895 7.895 10 9 10C9.55 10 10.0483 10.22 10.4153 10.5866L11.829 9.173C11.1049 8.44841 10.1045 8 9 8ZM16 8C13.792 8 12 9.792 12 12C12 14.208 13.792 16 16 16C17.104 16 18.104 15.552 18.828 14.828L17.4144 13.4144C17.0525 13.7762 16.5525 14 16 14C14.895 14 14 13.105 14 12C14 10.895 14.895 10 16 10C16.553 10 17.0534 10.2241 17.4153 10.5866L18.829 9.173C18.1049 8.44841 17.1045 8 16 8Z"></path></symbol>
+            <symbol id="plyr-captions-off" viewBox="0 0 24 24"><path d="M21 3C21.5523 3 223.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 5H4V19H20V5ZM9 8C10.1045 8 11.1049 8.44841 11.829 9.173L10.4153 10.5866C10.0534 10.2241 9.55299 10 9 10C7.895 10 7 10.895 7 12C7 13.105 7.895 14 9 14C9.5525 14 10.0525 13.7762 10.4144 13.4144L11.828 14.828C11.104 15.552 10.104 16 9 16C6.792 16 5 14.208 5 12C5 9.792 6.792 8 9 8ZM16 8C17.1045 8 18.1049 8.44841 18.829 9.173L17.4153 10.5866C17.0534 10.2241 16.553 10 16 10C14.895 10 14 10.895 14 12C14 13.105 14.895 14 16 14C16.5525 14 17.0525 13.7762 17.4144 13.4144L18.828 14.828C18.104 15.552 17.104 16 16 16C13.792 16 12 14.208 12 12C12 9.792 13.792 8 16 8Z"></path></symbol>
+            <symbol id="plyr-video-on" viewBox="0 0 24 24"><path d="M3 3.9934C3 3.44476 3.44495 3 3.9934 3H20.0066C20.5552 3 21 3.44495 21 3.9934V20.0066C21 20.5552 20.5551 21 20.0066 21H3.9934C3.44476 21 3 20.5551 3 20.0066V3.9934ZM10.6219 8.41459C10.5562 8.37078 10.479 8.34741 10.4 8.34741C10.1791 8.34741 10 8.52649 10 8.74741V15.2526C10 15.3316 10.0234 15.4088 10.0672 15.4745C10.1897 15.6583 10.4381 15.708 10.6219 15.5854L15.5008 12.3328C15.5447 12.3035 15.5824 12.2658 15.6117 12.2219C15.7343 12.0381 15.6846 11.7897 15.5008 11.6672L10.6219 8.41459Z"></path></symbol>
+            <symbol id="plyr-video-off" viewBox="0 0 24 24"><path d="M2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM4 5V19H20V5H4ZM10.6219 8.41459L15.5008 11.6672C15.6846 11.7897 15.7343 12.0381 15.6117 12.2219C15.5824 12.2658 15.5447 12.3035 15.5008 12.3328L10.6219 15.5854C10.4381 15.708 10.1897 15.6583 10.0672 15.4745C10.0234 15.4088 10 15.3316 10 15.2526V8.74741C10 8.52649 10.1791 8.34741 10.4 8.34741C10.479 8.34741 10.5562 8.37078 10.6219 8.41459Z"></path></symbol>
+            <symbol id="plyr-enter-fullscreen" viewBox="0 0 24 24"><path d="M17.5858 5H14V3H21V10H19V6.41421L14.7071 10.7071L13.2929 9.29289L17.5858 5ZM3 14H5V17.5858L9.29289 13.2929L10.7071 14.7071L6.41421 19H10V21H3V14Z"></path></symbol>
+            <symbol id="plyr-exit-fullscreen" viewBox="0 0 24 24"><path d="M15 4.00008H13V11.0001H20V9.00008H16.4142L20.7071 4.70718L19.2929 3.29297L15 7.58586V4.00008ZM4.00008 15H7.58586L3.29297 19.2929L4.70718 20.7071L9.00008 16.4142V20H11.0001V13H4.00008V15Z"></path></symbol>
+            <symbol id="plyr-muted" viewBox="0 0 24 24"><path d="M10 7.22056L6.60282 10.0001H3V14.0001H6.60282L10 16.7796V7.22056ZM5.88889 16.0001H2C1.44772 16.0001 1 15.5524 1 15.0001V9.00007C1 8.44778 1.44772 8.00007 2 8.00007H5.88889L11.1834 3.66821C11.3971 3.49335 11.7121 3.52485 11.887 3.73857C11.9601 3.8279 12 3.93977 12 4.05519V19.9449C12 20.2211 11.7761 20.4449 11.5 20.4449C11.3846 20.4449 11.2727 20.405 11.1834 20.3319L5.88889 16.0001ZM20.4142 12.0001L23.9497 15.5356L22.5355 16.9498L19 13.4143L15.4645 16.9498L14.0503 15.5356L17.5858 12.0001L14.0503 8.46454L15.4645 7.05032L19 10.5859L22.5355 7.05032L23.9497 8.46454L20.4142 12.0001Z"></path></symbol>
+            <symbol id="plyr-volume" viewBox="0 0 24 24"><path d="M6.60282 10.0001L10 7.22056V16.7796L6.60282 14.0001H3V10.0001H6.60282ZM2 16.0001H5.88889L11.1834 20.3319C11.2727 20.405 11.3846 20.4449 11.5 20.4449C11.7761 20.4449 12 20.2211 12 19.9449V4.05519C12 3.93977 11.9601 3.8279 11.887 3.73857C11.7121 3.52485 11.3971 3.49335 11.1834 3.66821L5.88889 8.00007H2C1.44772 8.00007 1 8.44778 1 9.00007V15.0001C1 15.5524 1.44772 16.0001 2 16.0001ZM23 12C23 15.292 21.5539 18.2463 19.2622 20.2622L17.8445 18.8444C19.7758 17.1937 21 14.7398 21 12C21 9.26016 19.7758 6.80629 17.8445 5.15557L19.2622 3.73779C21.5539 5.75368 23 8.70795 23 12ZM18 12C18 10.0883 17.106 8.38548 15.7133 7.28673L14.2842 8.71584C15.3213 9.43855 16 10.64 16 12C16 13.36 15.3213 14.5614 14.2842 15.2841L15.7133 16.7132C17.106 15.6145 18 13.9116 18 12Z"></path></symbol>
+            <symbol id="plyr-list" viewBox="0 0 24 24"><path d="M8 4H21V6H8V4ZM4.5 6.5C3.67157 6.5 3 5.82843 3 5C3 4.17157 3.67157 3.5 4.5 3.5C5.32843 3.5 6 4.17157 6 5C6 5.82843 5.32843 6.5 4.5 6.5ZM4.5 13.5C3.67157 13.5 3 12.8284 3 12C3 11.1716 3.67157 10.5 4.5 10.5C5.32843 10.5 6 11.1716 6 12C6 12.8284 5.32843 13.5 4.5 13.5ZM4.5 20.4C3.67157 20.4 3 19.7284 3 18.9C3 18.0716 3.67157 17.4 4.5 17.4C5.32843 17.4 6 18.0716 6 18.9C6 19.7284 5.32843 20.4 4.5 20.4ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z"></path></symbol>
+            <symbol id="plyr-airplay" viewBox="0 0 24 24"><polygon points="6,22 18,22 12,16"></polygon><path d="M21,3H3C1.9,3,1,3.9,1,5v12c0,1.1,0.9,2,2,2h4v-2H3V5h18v12h-4v2h4c1.1,0,2-0.9,2-2V5C23,3.9,22.1,3,21,3z"></path></symbol>
+            <symbol id="plyr-pip" viewBox="0 0 24 24"><path d="M21 3C21.5523 3 22 3.44772 22 4V11H20V5H4V19H10V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM21 13C21.5523 13 22 13.4477 22 14V20C22 20.5523 21.5523 21 21 21H13C12.4477 21 12 20.5523 12 20V14C12 13.4477 12.4477 13 13 13H21ZM20 15H14V19H20V15Z"></path></symbol>
+            <symbol id="plyr-like" viewBox="0 0 24 24"><path d="M16.5 3C19.5376 3 22 5.5 22 9C22 16 14.5 20 12 21.5C9.5 20 2 16 2 9C2 5.5 4.5 3 7.5 3C9.35997 3 11 4 12 5C13 4 14.64 3 16.5 3Z"></path></symbol>
+            <symbol id="plyr-download" viewBox="0 0 24 24"><path d="M3 19H21V21H3V19ZM13 13.1716L19.0711 7.1005L20.4853 8.51472L12 17L3.51472 8.51472L4.92893 7.1005L11 13.1716V2H13V13.1716Z"></path></symbol>
+            <symbol id="plyr-save" viewBox="0 0 24 24"><path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path></symbol>
+            <symbol id="plyr-share" viewBox="0 0 16 16"><path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM7.8 10.386q.103 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z"></path></symbol>
+            <symbol id="plyr-comment" viewBox="0 0 24 24"><path d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3ZM12 17H14C17.3137 17 20 14.3137 20 11C20 7.68629 17.3137 5 14 5H10C6.68629 5 4 7.68629 4 11C4 14.61 6.46208 16.9656 12 19.4798V17Z"></path></symbol>
+            <symbol id="plyr-expander" viewBox="0 0 24 24"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></symbol>
+            <symbol id="plyr-collapse" viewBox="0 0 24 24"><path d="M12,15.7L5.6,9.4l0.7-0.7l5.6,5.6l5.6-5.6l0.7,0.7L12,15.7z"></path></symbol>
+            <symbol id="plyr-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></symbol>
+        </svg>
+    </div>
+
+CopyReplit
+<style>
+    .edd-js-none .edd-has-js,
+    .edd-js .edd-no-js,
+    body.edd-js input.edd-no-js {
+        display: none;
+    }
+</style>
+<script>
+    (function() {
+        var c = document.body.classList;
+        c.remove('edd-js-none');
+        c.add('edd-js');
+    })();
+</script>
+
+<!-- Header -->
+<input type="checkbox" id="menu-state">
+<input type="checkbox" id="search-state">
+<header id="header" class="site-header">
+    <div class="header-container">
+        <div class="site-navbar">
+            <label for="menu-state" class="menu-toggle"><i class="icon-nav"></i></label>
+            <div class="site-brand">
+                <div class="site-logo">
+                    <a href="sympletunes-homepage.html" data-pjax-state="">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <g class="loading-bounce">
+                                <line style="--n: 0" x1="8" y1="17" x2="8" y2="17"></line>
+                                <line style="--n: 1" x1="10" y1="16" x2="10" y2="18"></line>
+                                <line style="--n: 2" x1="12" y1="14" x2="12" y2="20"></line>
+                                <line style="--n: 3" x1="14" y1="16" x2="14" y2="18"></line>
+                                <line style="--n: 4" x1="16" y1="17" x2="16" y2="17"></line>
+                            </g>
+                            <path d="M4 13.5V13c0-4.97 3.582-9 8-9s8 4.03 8 9v.5"></path>
+                            <path d="M2 17.439v-1.877a2 2 0 0 1 1.515-1.94L4 13.5l1.254-.314a.6.6 0 0 1 .746.582v5.464a.6.6 0 0 1-.746.582l-1.74-.435A2 2 0 0 1 2 17.439ZM22 17.439v-1.877a2 2 0 0 0-1.515-1.94L20 13.5l-1.255-.314a.6.6 0 0 0-.745.582v5.464a.6.6 0 0 0 .745.582l1.74-.435A2 2 0 0 0 22 17.439Z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <p class="site-title">
+                    <a href="sympletunes-homepage.html" rel="home" data-pjax-state="">Symple Tunes</a>
+                </p>
+            </div>
+            <div class="flex"></div>
+            <form class="search-form" method="get" action="https://demo.avtheme.com/musik" data-pjax-state="">
+                <input type="search" placeholder="Search..." value="" name="s" data-toggle="dropdown" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <label for="search-state" id="icon-search">
+                    <i class="icon-search"><i></i></i>
+                </label>
+                <div class="dropdown-menu"></div>
+            </form>
+            <div class="flex"></div>
+
+            <!-- Before Login Menu -->
+            <nav class="menu-before-login">
+                <div class="menu-before-login-container">
+                    <ul id="menu-before-login" class="nav">
+                        <li id="menu-item-4164" class="menu-item menu-item-type-custom menu-item-object-custom menu-cart menu-item-4164">
+                            <a href="sympletunes-homepage.htmlcheckout/" data-pjax-state="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                <span class="cart-quantity edd-cart-quantity">0</span>
+                            </a>
+                        </li>
+                        <li id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-132 current_page_item menu-item-4059">
+                            <a href="sympletunes-homepage.htmllogin/" aria-current="page" data-pjax-state="">Login</a>
+                        </li>
+                        <li id="menu-item-4060" class="btn-link menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-132 current_page_item menu-item-4060">
+                            <a href="sympletunes-homepage.htmllogin/?action=register" aria-current="page" data-pjax-state="">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Sidebar -->
+<aside id="aside" class="site-sidebar">
+    <div class="site-brand">
+        <label for="menu-state" class="menu-toggle"><i class="icon-nav"></i></label>
+        <div class="site-logo">
+            <a href="sympletunes-homepage.html" data-pjax-state="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <g class="loading-bounce">
+                        <line style="--n: 0" x1="8" y1="17" x2="8" y2="17"></line>
+                        <line style="--n: 1" x1="10" y1="16" x2="10" y2="18"></line>
+                        <line style="--n: 2" x1="12" y1="14" x2="12" y2="20"></line>
+                        <line style="--n: 3" x1="14" y1="16" x2="14" y2="18"></line>
+                        <line style="--n: 4" x1="16" y1="17" x2="16" y2="17"></line>
+                    </g>
+                    <path d="M4 13.5V13c0-4.97 3.582-9 8-9s8 4.03 8 9v.5"></path>
+                    <path d="M2 17.439v-1.877a2 2 0 0 1 1.515-1.94L4 13.5l1.254-.314a.6.6 0 0 1 .746.582v5.464a.6.6 0 0 1-.746.582l-1.74-.435A2 2 0 0 1 2 17.439ZM22 17.439v-1.877a2 2 0 0 0-1.515-1.94L20 13.5l-1.255-.314a.6.6 0 0 0-.745.582v5.464a.6.6 0 0 0 .745.582l1.74-.435A2 2 0 0 0 22 17.439Z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="site-title">
+                <a href="sympletunes-homepage.html" rel="home" data-pjax-state="">Symple Tunes</a>
+            </p>
+        </div>
+        <div class="site-menu">
+            <div class="menu-main-menu-container">
+                <ul id="menu-main-menu" class="nav">
+                    <li id="menu-item-4054" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4054">
+                        <a href="sympletunes-homepage.html" data-pjax-state="">Home</a>
+                    </li>
+                    <li id="menu-item-4055" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4055">
+                        <a href="sympletunes-homepage.htmlsongs/" data-pjax-state="">Songs</a>
+                    </li>
+                    <li id="menu-item-4056" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4056">
+                        <a href="sympletunes-homepage.htmlalbums/" data-pjax-state="">Albums</a>
+                    </li>
+                    <li id="menu-item-4057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4057">
+                        <a href="sympletunes-homepage.htmlartists/" data-pjax-state="">Artists</a>
+                    </li>
+                    <li id="menu-item-4058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4058">
+                        <a href="sympletunes-homepage.htmlplaylists/" data-pjax-state="">Playlists</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+CopyReplit
+<div id="page" class="site-content">
+    <div class="container">
+        <div class="page-content">
+            <div class="breadcrumbs">
+                <span class="breadcrumb-item" data-pjax-state=""><a href="sympletunes-homepage.html">Home</a></span>
+                <span class="breadcrumb-item current">Login</span>
+            </div>
+            <article id="post-132" class="post-132 page type-page status-publish hentry">
+                <header class="entry-header">
+                    <h1 class="entry-title">Login</h1>
+                </header>
+                <div class="entry-content">
+                    <div class="av-login-content">
+                        <div class="av-login-form-wrapper">
+                            <form name="loginform" id="loginform" action="sympletunes-homepage.htmlwp-login.php" method="post">
+                                <p>
+                                    <label for="user_login">Username or Email Address</label>
+                                    <input type="text" name="log" id="user_login" class="input" value="" size="20" autocomplete="username">
+                                </p>
+                                <p>
+                                    <label for="user_pass">Password</label>
+                                    <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" autocomplete="current-password">
+                                </p>
+                                <p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label></p>
+                                <p class="submit">
+                                    <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Log In">
+                                    <input type="hidden" name="redirect_to" value="sympletunes-homepage.html">
+                                </p>
+                            </form>
+                        </div>
+                        <p id="nav">
+                            <a href="sympletunes-homepage.htmlwp-login.php?action=lostpassword">Lost your password?</a>
+                        </p>
+                        <div class="av-social-login-wrapper">
+                            <a href="sympletunes-homepage.htmlwp-login.php?loginSocial=facebook" rel="nofollow" class="btn-social btn-facebook"><i class="icon-facebook"></i>Login with Facebook</a>
+                            <a href="sympletunes-homepage.htmlwp-login.php?loginSocial=google" rel="nofollow" class="btn-social btn-google"><i class="icon-google"></i>Login with Google</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="site-footer">
+    <div class="footer-social">
+        <ul class="nav">
+            <li><a href="#"><i class="icon-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-youtube"></i></a></li>
+            <li><a href="#"><i class="icon-instagram"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <p>Copyright 2023 - Symple Tunes. All rights reserved.</p><br>
+		<p>Designed by <a href="">Symtech Web</a></p>
+    </div>
+</footer>
+
+<script src="sympletunes-homepage.htmlwp-content/themes/musik/assets/js/script.js?ver=2.3.1" id="theme-script-js"></script>
+<script src="sympletunes-homepage.htmlwp-content/themes/musik/assets/js/pjax.js?ver=2.3.1" id="pjax-script-js"></script>
+<script>
+    if (typeof pjax !== 'undefined') {
+        pjax.options = {
+            containers: ['#aside', '#page', '.jp-playlist', '.wp-playlist'],
+            switches: {
+                '#aside': pjax.switches.innerHTML,
+                '#page': pjax.switches.innerHTML,
+                '.jp-playlist': pjax.switches.innerHTML,
+                '.wp-playlist': pjax.switches.innerHTML,
+            },
+            cacheBust: false,
+        }
+
+        document.addEventListener('pjax:success', function() {
+            if (typeof EDD !== 'undefined') {
+                EDD.maybe_hide_cart_item_quantities();
+            }
+        })
+    }
+</script>
+<script>
+    if (typeof EDD !== 'undefined') {
+        EDD.maybe_hide_cart_item_quantities();
+    }
+</script>
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-131523339-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <filter id="drop-shadow">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+            <feOffset dx="1" dy="1" result="offsetblur" />
+            <feComponentTransfer in="SourceAlpha">
+                <feFuncA type="linear" slope="0.2" />
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+</svg>
+
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '',
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: 'v3.3'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+</body> 
+</html>

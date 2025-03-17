@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tunes Music Page</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="logo.jpg" alt="symtunes logo" height="100">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class='active'><a href="music.html">Music</a></li>
+                <li><a href="lyrics.html">Lyrics</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="update.html">Update</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h3 class="animate-charcter">SYMPLE TUNES</h3>
+        </div>
+        <div class="register">
+            <a class="footer-call-to-action-button button" href="login.html" target="_self"> GET IN TOUCH </a>
+        </div>
+        <div class="menu-icon">
+            <img src="menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Menu Icon">
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const menuIcon = document.querySelector('.menu-icon');
+                const navMenu = document.querySelector('nav ul');
+
+                menuIcon.addEventListener('click', () => {
+                    navMenu.classList.toggle('show');
+                });
+            });
+        </script>
+    </header>
+
+    <!-- Search Form -->
+    <section>
+        <div class="container">
+            <h1>Search for Music</h1>
+           	
+		<form class="search-form">
+			<input type="search" id="search-input-symple-tunes" placeholder="Search..." name="s" autocomplete="on">
+			<label id="icon-search">
+				<i class="icon-search"></i>
+			</label>
+			<div class="dropdown-menu"></div>
+		</form>
+	
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-container">
+            <!-- The results will be displayed here -->
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const searchForm = document.querySelector(".search-form");
+    const searchInput = document.querySelector("#search-input-symple-tunes");
+    const searchResultsContainer = document.querySelector(".dropdown-menu");
+
+    if (!searchForm || !searchInput || !searchResultsContainer) {
+        console.error("❌ Search form or elements not found in the DOM.");
+        return;
+    }
+
+    searchForm.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent page reload
+
+        const query = searchInput.value.trim();
+        if (!query) return; // Stop if input is empty
+
+        searchResultsContainer.innerHTML = "<p>Loading...</p>"; // Show loading state
+
+        try {
+            console.log("🔍 Searching for:", query);
+
+            const response = await fetch(
+                `https://v1.nocodeapi.com/sympletunes25/spotify/jBbdVSySKyWbwpUG/search?q=${encodeURIComponent(query)}`,
+                {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" },
+                    redirect: "follow",
+                }
+            );
+
+            if (!response.ok) throw new Error(`API request failed with status: ${response.status}`);
+
+            const data = await response.json();
+            console.log("✅ API Response Data:", data);
+
+            displayResults(data);
+        } catch (error) {
+            console.error("❌ Error fetching search results:", error);
+            searchResultsContainer.innerHTML = "<p>Error fetching results</p>";
+        }
+    });
+
+    function displayResults(data) {
+        searchResultsContainer.innerHTML = ""; // Clear previous results
+
+        if (!data || !data.tracks || !data.tracks.items || data.tracks.items.length === 0) {
+            console.warn("⚠️ No results found for the query.");
+            searchResultsContainer.innerHTML = "<p>No results found</p>";
+            return;
+        }
+
+        data.tracks.items.forEach(track => {
+            const resultItem = document.createElement("div");
+            resultItem.classList.add("search-result-item");
+
+            resultItem.innerHTML = `
+                <a href="${track.external_urls.spotify}" target="_blank" class="search-result-link">
+                    <img src="${track.album.images[0]?.url || 'default-image.jpg'}" alt="Thumbnail" width="40">
+                    <span>${track.name} - ${track.artists.map(artist => artist.name).join(", ")}</span>
+                </a>
+            `;
+            searchResultsContainer.appendChild(resultItem);
+        });
+
+        searchResultsContainer.style.display = "block"; // Show results
+    }
+});
+
+    </script>
+</body>
+</html>

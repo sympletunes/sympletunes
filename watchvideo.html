@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video</title>
+</head>
+<body>
+    <div id="videoContainer">
+        <div id="mainVideoContainer"></div>
+        <h2>Related Videos</h2>
+        <div id="relatedVideos"></div>
+    </div>
+
+    <script>
+        const apiKey = 'YOUR_YOUTUBE_API_KEY'; // Replace with your own API key.
+        
+        function getVideoDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('videoId');
+
+            if (!videoId) {
+                alert('No video selected');
+                return;
+            }
+
+            // Embed the main video
+            const mainVideoContainer = document.getElementById('mainVideoContainer');
+            mainVideoContainer.innerHTML = `
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <button onclick="closeVideo()">Close Video</button>
+            `;
+
+            // Fetch related videos
+            const apiUrl = `https://www.googleapis.com/youtube/v3.search?part=snippet&relatedToVideoId=${videoId}&type=video&key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => displayRelatedVideos(data.items))
+                .catch(error => console.error('Error fetching related videos:', error));
+        }
+
+        function displayRelatedVideos(items) {
+            const relatedVideos = document.getElementById('relatedVideos');
+            relatedVideos.innerHTML = '';
+
+            if (items.length === 0) {
+                relatedVideos.innerHTML = '<p>No related videos found.</p>';
+                return;
+            }
+
+            items.forEach(item => {
+                const videoId = item.id.videoId;
+                const title = item.snippet.title;
+                const thumbnailUrl = item.snippet.thumbnails.default.url;
+
+                const videoElement = document.createElement('div');
+                videoElement.classList.add('related-video-card');
+                videoElement.innerHTML = `
+                    <img src="${thumbnailUrl}" alt="${title}">
+                    <p>${title}</p>
+                    <button onclick="playVideo('${videoId}')">Watch Video</button>
+                `;
+                relatedVideos.appendChild(videoElement);
+            });
+        }
+
+        function closeVideo() {
+            window.close(); // Close the video page
+        }
+
+        // Initialize when the page loads
+        window.onload = getVideoDetails;
+    </script>
+</body>
+</html>

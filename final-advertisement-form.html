@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Submission Form</title>
+  <style>
+    /* ===== CUSTOMIZE STYLES ===== */
+    :root {
+      --primary-color: #2196F3;
+      --secondary-color: #4CAF50;
+      --font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section {
+      margin-bottom: 25px;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .review-section {
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Submit Your Advertisement</h1>
+
+    <!-- Initial Form Section -->
+    <div id="initialForm">
+      <div class="form-section">
+        <h2>Basic Information</h2>
+        <label>Business/Service Name</label>
+        <input type="text" id="businessName" required>
+
+        <label>Ad Title</label>
+        <input type="text" id="adTitle" required>
+
+        <label>Ad Description</label>
+        <textarea id="adDescription" rows="4" required></textarea>
+
+        <label>Target Audience</label>
+        <select id="targetAudience" required>
+          <option value="">Select</option>
+          <option value="general">General Public</option>
+          <option value="business">Businesses</option>
+          <option value="youth">Youth (18-25)</option>
+        </select>
+
+        <label>Ad Duration (Days)</label>
+        <input type="number" id="adDuration" min="1" max="30" required>
+
+        <label>Ad Placements</label>
+        <select id="adPlacements" multiple required>
+          <option value="homepage">Homepage</option>
+          <option value="sidebar">Sidebar</option>
+          <option value="newsfeed">News Feed</option>
+        </select>
+      </div>
+      <button type="button" onclick="showAdditionalFields()">Continue</button>
+    </div>
+
+    <!-- Additional Fields Section -->
+    <div id="additionalFields" class="hidden">
+      <div class="form-section">
+        <h2>Additional Details</h2>
+        <label>Ad Category</label>
+        <select id="adCategory" required>
+          <!-- Add your categories -->
+          <option value="retail">Retail</option>
+          <option value="services">Services</option>
+          <option value="events">Events</option>
+        </select>
+
+        <label>Upload Images (2+ required)</label>
+        <input type="file" id="adImages" accept="image/*" multiple required>
+
+        <label>Upload Video (optional)</label>
+        <input type="file" id="adVideo" accept="video/*">
+
+        <label>Payment Method</label>
+        <select id="paymentMethod" required>
+          <option value="">Select</option>
+          <option value="mobile_money">Mobile Money</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="bank">Bank Transfer</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <div id="paymentDetails"></div>
+      </div>
+      <button type="button" onclick="showReview()">Review & Pay</button>
+    </div>
+
+    <!-- Final Review Section -->
+    <div id="reviewSection" class="hidden">
+      <div class="review-section">
+        <h2>Review Your Submission</h2>
+        <div id="reviewContent"></div>
+        <label>
+          <input type="checkbox" id="confirmation" required> I confirm all details are correct
+        </label>
+        <button onclick="submitForm()">Submit Advertisement</button>
+        <button type="button" onclick="editForm()" style="background-color: #666">Edit Details</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Form Navigation
+    function showAdditionalFields() {
+      if(validateInitialForm()) {
+        document.getElementById('initialForm').classList.add('hidden');
+        document.getElementById('additionalFields').classList.remove('hidden');
+      }
+    }
+
+    function showReview() {
+      if(validateAdditionalFields()) {
+        document.getElementById('additionalFields').classList.add('hidden');
+        document.getElementById('reviewSection').classList.remove('hidden');
+        populateReview();
+      }
+    }
+
+    function editForm() {
+      document.getElementById('reviewSection').classList.add('hidden');
+      document.getElementById('initialForm').classList.remove('hidden');
+    }
+
+    // Validation Functions
+    function validateInitialForm() {
+      // Add your validation logic
+      return true;
+    }
+
+    function validateAdditionalFields() {
+      // Add validation for images and payment
+      return true;
+    }
+
+    // Review Content Population
+    function populateReview() {
+      const reviewContent = document.getElementById('reviewContent');
+      reviewContent.innerHTML = `
+        <h3>Basic Information</h3>
+        <p><strong>Business Name:</strong> ${document.getElementById('businessName').value}</p>
+        <p><strong>Ad Title:</strong> ${document.getElementById('adTitle').value}</p>
+        <p><strong>Description:</strong> ${document.getElementById('adDescription').value}</p>
+        
+        <h3>Targeting & Placement</h3>
+        <p><strong>Audience:</strong> ${document.getElementById('targetAudience').value}</p>
+        <p><strong>Duration:</strong> ${document.getElementById('adDuration').value} days</p>
+        <p><strong>Placements:</strong> ${Array.from(document.getElementById('adPlacements').selectedOptions).map(o => o.value).join(', ')}</p>
+        
+        <h3>Media & Payment</h3>
+        <p><strong>Category:</strong> ${document.getElementById('adCategory').value}</p>
+        <p><strong>Images:</strong> ${document.getElementById('adImages').files.length} selected</p>
+        <p><strong>Video:</strong> ${document.getElementById('adVideo').files.length ? 'Attached' : 'None'}</p>
+        <p><strong>Payment Method:</strong> ${document.getElementById('paymentMethod').value}</p>
+      `;
+    }
+
+    // Submission Handler
+    function submitForm() {
+      if(document.getElementById('confirmation').checked) {
+        // Add your submission logic here
+        const formData = {
+          businessName: document.getElementById('businessName').value,
+          adTitle: document.getElementById('adTitle').value,
+          // Collect all other fields
+        };
+
+        // Simulate email confirmation
+        alert('Your ad has been submitted! It will be available within 24 hours.');
+        
+        // Reset form
+        document.getElementById('reviewSection').classList.add('hidden');
+        document.getElementById('initialForm').classList.remove('hidden');
+        document.getElementById('mainForm').reset();
+      }
+    }
+
+    // Payment Method Handler
+    document.getElementById('paymentMethod').addEventListener('change', function() {
+      const paymentDetails = document.getElementById('paymentDetails');
+      paymentDetails.innerHTML = '';
+      
+      if(this.value === 'mobile_money') {
+        paymentDetails.innerHTML = `
+          <label>Mobile Number</label>
+          <input type="tel" required>
+        `;
+      }
+      else if(this.value === 'card') {
+        paymentDetails.innerHTML = `
+          <label>Card Number</label>
+          <input type="text" pattern="\d{16}" required>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

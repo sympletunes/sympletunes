@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Tunes News Update Page</title>
+  <link rel="stylesheet" href="style3.css">
+  <style>
+    /* Basic styling for news items */
+    .news-item {
+      display: flex;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .news-item img {
+      max-width: 150px;
+      margin-right: 20px;
+    }
+    .news-item h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .news-item p {
+      font-size: 14px;
+    }
+    .read-more-button {
+      padding: 5px 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <header>
+    <div class="main">
+      <div class="logo">
+        <img src="logo.jpg" alt="symtunes logo" height="100">
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="lyrics.html">Lyrics</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li class='active'><a href="update.html">Update</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h3 class="animate-charcter">SYMPLE TUNES</h3>
+    </div>
+    <div class="register">
+      <a class="footer-call-to-action-button button" href="login.html" target="_self"> GET IN TOUCH </a>
+    </div>
+    <div class="menu-icon">
+      <img src="menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Menu Icon">
+    </div>
+  </header>
+
+  <!-- Search Form -->
+  <section>
+    <div class="container">
+      <h1>Search for Music News</h1>
+
+      <div id="results"></div> <!-- Div to display news articles -->
+
+      <div id="full-article" style="display: none;">
+        <button onclick="closeArticle()">Close</button>
+        <div id="article-content"></div>
+      </div>
+      
+      <form id="searchForm" class="styles-searchBox">
+        <input type="text" id="query" class="styles-searchInput" placeholder="Search for news..." required>
+        <button type="submit" class="styles-searchButton">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+            <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+          </svg>
+        </button>
+      </form>
+      
+      <section id="results"></section>
+      <section id="full-article" style="display: none;">
+        <div id="article-content"></div>
+        <button onclick="closeArticle()">Close</button>
+      </section>
+      
+      <script>
+        const GUARDIAN_API_KEY = '316f4439-426a-4ddd-8ae6-3232e90388e3';  // The Guardian API key
+      
+        const resultsDiv = document.getElementById('results');
+        const queryInput = document.getElementById('query');
+      
+        // Function to fetch entertainment news for Ghana, Nigeria, and global news
+        async function fetchEntertainmentNews(query = '') {
+          const ghNgUrl = `https://content.guardianapis.com/search?api-key=${GUARDIAN_API_KEY}&section=world&page-size=10&q=entertainment%20ghana%20nigeria%20${encodeURIComponent(query)}&show-fields=thumbnail,headline,byline`;
+          const globalUrl = `https://content.guardianapis.com/search?api-key=${GUARDIAN_API_KEY}&section=world&page-size=10&q=entertainment%20${encodeURIComponent(query)}&show-fields=thumbnail,headline,byline`;
+      
+          resultsDiv.innerHTML = ''; // Clear any existing news before new results
+      
+          try {
+            // Fetch Ghana & Nigeria entertainment news first (10 articles)
+            const ghNgResponse = await fetch(ghNgUrl);
+            const ghNgData = await ghNgResponse.json();
+            if (ghNgData.response && ghNgData.response.results.length > 0) {
+              displayNews(ghNgData.response.results, 'Ghana & Nigeria Entertainment News');
+            }
+      
+            // Fetch global entertainment news (10 articles)
+            const globalResponse = await fetch(globalUrl);
+            const globalData = await globalResponse.json();
+            if (globalData.response && globalData.response.results.length > 0) {
+              displayNews(globalData.response.results, 'Global Entertainment News');
+            }
+          } catch (error) {
+            console.error('Error fetching news:', error);
+            resultsDiv.innerHTML = `<p>Error fetching news. Please try again later.</p>`;
+          }
+        }
+      
+        // Function to display the news articles
+        function displayNews(articles, sectionTitle) {
+          // If there is a section title, display it as a header
+          if (sectionTitle) {
+            const sectionHeader = document.createElement('h3');
+            sectionHeader.innerText = sectionTitle;
+            resultsDiv.appendChild(sectionHeader);
+          }
+      
+          articles.forEach(article => {
+            const title = article.webTitle || 'No title available';
+            const shortDescription = article.fields?.headline || 'No description available.';
+            const thumbnail = article.fields?.thumbnail || 'https://via.placeholder.com/150'; // Fallback for missing thumbnail
+            const source = article.byline || 'Unknown source';
+            const url = article.webUrl || '#';
+      
+            const newsItem = document.createElement('div');
+            newsItem.classList.add('news-item');
+            newsItem.innerHTML = `
+              <div>
+                <img src="${thumbnail}" alt="${title}" style="width:100%; max-height: 200px; object-fit: cover;">
+                <h3><a href="javascript:void(0);" onclick="displayFullArticle('${title}', '${shortDescription}', '${url}')">${title}</a></h3>
+                <p>${shortDescription}</p>
+                <p><strong>Source:</strong> ${source}</p>
+                <button class="read-more-button" onclick="openInNewTab('${url}')">Read More</button>
+              </div>
+            `;
+            resultsDiv.appendChild(newsItem);
+          });
+        }
+      
+        // Function to open the article in a new tab
+        function openInNewTab(url) {
+          window.open(url, '_blank');
+        }
+      
+        // Function to display full article within the page
+        function displayFullArticle(title, description, url) {
+          const articleDiv = document.getElementById('full-article');
+          const articleContentDiv = document.getElementById('article-content');
+          articleDiv.style.display = 'block';
+          articleContentDiv.innerHTML = `
+            <h2>${title}</h2>
+            <p>${description}</p>
+            <a href="${url}" target="_blank">Read the full article</a>
+          `;
+        }
+      
+        // Fetch latest entertainment news (Ghana, Nigeria, and Global) when the page loads
+        window.onload = () => fetchEntertainmentNews();
+      
+        // Event listener for search form submission
+        document.getElementById('searchForm').addEventListener('submit', (event) => {
+          event.preventDefault();
+          const query = queryInput.value.trim();
+          if (query) {
+            fetchSearchResults(query);  // Fetch search results based on the query
+          }
+        });
+      
+        // Function to fetch search results and display them
+        async function fetchSearchResults(query) {
+          const searchUrl = `https://content.guardianapis.com/search?api-key=${GUARDIAN_API_KEY}&section=world&page-size=10&q=entertainment%20${encodeURIComponent(query)}&show-fields=thumbnail,headline,byline`;
+      
+          resultsDiv.innerHTML = ''; // Clear previous results
+      
+          try {
+            // Fetch search results based on the query
+            const searchResponse = await fetch(searchUrl);
+            const searchData = await searchResponse.json();
+            if (searchData.response && searchData.response.results.length > 0) {
+              displayNews(searchData.response.results, 'Search Results');
+            } else {
+              resultsDiv.innerHTML = `<p>No results found for your search query.</p>`;
+            }
+          } catch (error) {
+            console.error('Error fetching search results:', error);
+            resultsDiv.innerHTML = `<p>Error fetching search results. Please try again later.</p>`;
+          }
+        }
+      </script>
+      
+  </section>
+</body>
+</html>

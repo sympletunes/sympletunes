@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Tunes Lyrics Page</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+	<!-- Navigation bar -->
+  <header>
+    <div class="main">
+      <div class="logo">
+        <img src="logo.jpg" alt="symtunes logo" height="100">
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li class='active'><a href="lyrics.html">Lyrics</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="update.html">Update</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h3 class="animate-charcter">SYMPLE TUNES</h3>
+  </div>
+    <div class="register">
+      <a class="footer-call-to-action-button button" href="login.html" target="_self"> GET IN TOUCH </a>
+    </div>
+    
+    <div class="menu-icon">
+      <img src="menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Menu Icon">
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('nav ul');
+    
+        menuIcon.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+        });
+      });
+    </script>
+    
+  </header>
+
+  <!-- Search Form -->
+  <section>
+    <div class="container">
+      <h1>Search for Music</h1>
+      <form id="searchForm" class="styles-searchBox">
+        <input type="text" id="query" class="styles-searchInput" placeholder="Enter song or artist">
+        <button type="submit" class="styles-searchButton">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+            <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+          </svg>
+        </button>
+      </form>
+      
+    </div>
+
+    <!-- Results -->
+    <div id="results"></div>
+  </section>
+
+  <script>
+    const ACCESS_TOKEN = 'wIBe5AmeUQ8kQQt9RKCJ_hqiGimO8N6u8iaZ5XMWIECROkZzobKWoOg1mbFv4chq'; // Your Genius API access token
+  
+    // Handle form submission and search lyrics
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const query = document.getElementById('query').value.trim();
+      if (query) {
+        getLyrics(query);
+      } else {
+        document.getElementById('results').innerHTML = `<p>Please enter a song title or artist.</p>`;
+      }
+    });
+  
+    async function getLyrics(query) {
+      try {
+        // Step 1: Search for the song
+        const searchUrl = `https://api.genius.com/search?q=${encodeURIComponent(query)}`;
+        const searchResponse = await fetch(searchUrl, {
+          headers: {
+            'Authorization': `Bearer ${ACCESS_TOKEN}`,
+          },
+        });
+  
+        if (!searchResponse.ok) {
+          throw new Error(`HTTP Error: ${searchResponse.status}`);
+        }
+  
+        const searchData = await searchResponse.json();
+        console.log('Search Data:', searchData); // Log search data for debugging
+  
+        // Extract the first hit from the response
+        const hits = searchData.response.hits;
+        if (hits.length > 0) {
+          const result = hits[0].result;
+          const songTitle = result.full_title; // Full song title (e.g., "Rebel Music by Black Sherif")
+          const lyricsUrl = result.url; // Genius page URL for the song
+  
+          // Display the result
+          document.getElementById('results').innerHTML = `
+            <h2>Lyrics found for: ${songTitle}</h2>
+            <p>Click <a href="${lyricsUrl}" target="_blank">here</a> to view the lyrics on Genius.</p>
+          `;
+        } else {
+          document.getElementById('results').innerHTML = `<p>No results found for "${query}". Please try again.</p>`;
+        }
+      } catch (error) {
+        console.error('Error fetching lyrics:', error);
+        document.getElementById('results').innerHTML = `<p>Something went wrong. Please try again later.</p>`;
+      }
+    }
+  </script>
+  
+</body>
+</html>

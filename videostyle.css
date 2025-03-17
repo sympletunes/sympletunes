@@ -1,0 +1,251 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Header styles */
+header {
+    background-color: rgb(229, 20, 177);
+    transition: background-color 0.5s ease;
+    height: 20vh;
+    display: flex;
+    flex-direction: column; /* Allowing stacking of elements */
+    align-items: center;
+    justify-content: center;
+}
+
+header:hover {
+    background-color: aqua;
+}
+
+.animate-charcter {
+    font-family: 'Algerian', Times New Roman, serif;
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    margin-bottom: 20px;
+    font-size: 65px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #443ca0f6;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.5s ease;
+    font-size: 20px;
+}
+
+nav li a:hover {
+    background-color: #fff;
+    color: #151414;
+}
+
+nav li.active {
+    background-color: #fff;
+    color: #151414;
+}
+
+.container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchInput:focus {
+    width: 400px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+}
+
+/* Searching Results */
+#searchResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Video Card */
+.video-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.video-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .animate-charcter {
+        font-size: 48px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    #searchInput {
+        width: 250px;
+    }
+
+    #searchInput:focus {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-charcter {
+        font-size: 36px;
+    }
+
+    nav li a {
+        font-size: 16px;
+    }
+
+    #searchInput {
+        width: 200px;
+    }
+
+    #searchButton {
+        padding: 8px 15px;
+    }
+}
+.latest-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.latest-video-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%; /* Make cards responsive */
+    text-align: center; /* Center content */
+    position: relative;
+}
+
+.latest-video-card img {
+    width: 100%; /* Cover entire card */
+    border-radius: 5px 5px 0 0;
+}
+
+.latest-video-card p {
+    margin: 10px 0;
+}
+
+/* Styles for Video Buttons */
+.latest-video-card a {
+    display: inline-block;
+    justify-content: center;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+    transition: background-color 0.3s ease 0s;
+    background: rgb(250, 2, 2);
+    text-decoration: none;
+    border: 2px solid rgb(107, 0, 0);
+}
+
+.latest-video-card a:hover{
+    background: #f9f9f9;
+    border: 2px solid rgb(250, 2, 2) ;
+    color: rgb(107, 0, 0);
+}
+.video-card a {
+    display: inline-block;
+    justify-content: center;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+    transition: background-color 0.3s ease 0s;
+    background: rgb(250, 2, 2);
+    text-decoration: none;
+    border: 2px solid rgb(107, 0, 0);
+}
+
+.video-card a:hover{
+    background: #f9f9f9;
+    border: 2px solid rgb(250, 2, 2) ;
+    color: rgb(107, 0, 0);
+}
+
+

@@ -1,0 +1,574 @@
+/* ========== Results Header ========== */
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+.results-header h2 {
+  font-size: 1.8em;
+  color: #333;
+}
+.results-header h2 b {
+  color: #007bff;
+  font-style: italic;
+}
+.results-list-container ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.results-list-container li a {
+  text-decoration: none;
+  padding: 8px 15px;
+  background: #ddd;
+  border-radius: 5px;
+  color: #333;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+.results-list-container li a:hover,
+.results-list-container li a.active {
+  background: #007bff;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .results-list-container ul {
+    flex-wrap: wrap;
+  }
+}
+
+/* ========== Results Section ========== */
+.results-section-symple-tunes {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#symple-search-results-container {
+  margin-bottom: 30px;
+}
+
+/* ---------- Category Specific Styles ---------- */
+
+/* Common hover effect for clickable cards */
+.artist-profile-item:hover,
+.profile-item:hover,
+.track-item:hover,
+.search-result-item:hover,
+.album-item:hover,
+.video-item:hover,
+.news-item:hover {
+  background: linear-gradient(135deg, rgba(173,216,230,0.2), rgba(173,216,230,0));
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Profiles */
+.artist-profiles-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow profiles to wrap into multiple rows */
+  gap: 20px;       /* Space between profile items */
+  padding: 10px;
+  justify-content: flex-start; /* or center if preferred */
+}
+
+.artist-profiles-header {
+  margin-top: 0;
+  margin-bottom: var(--y-gap, 20px); /* Fallback value if --y-gap not defined */
+  font-weight: var(--font-weight-heading, 700); /* Fallback value */
+  letter-spacing: -0.0125em;
+  line-height: 1.1;
+  font-size: 2rem;
+}
+
+.artist-profile-item,
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+  height: 390px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.artist-profile-item img,
+.profile-item img {
+  /* Increased size for profile picture */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+.artist-details,
+.profile-details {
+  text-align: center;
+  width: 100%;
+}
+.profile-details h3,
+.artist-details h3 {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+}
+.profile-details p,
+.artist-details p {
+  font-size: 1em;
+  color: #555;
+}
+.profile-actions,
+.artist-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.profile-actions button,
+.artist-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Tracks */
+.track-item,
+.search-result-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.track-item img,
+.search-result-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.track-details h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+.track-details p {
+  font-size: 1em;
+  color: #555;
+}
+.track-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.track-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Albums */
+.album-item,
+.album-container .album-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.album-item img,
+.album-container .album-item img {
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.album-info {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.album-info h3,
+.album-details h3 {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+}
+.album-info p,
+.album-details p {
+  font-size: 1em;
+  color: #555;
+}
+.album-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.album-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #17a2b8;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Videos */
+.video-item,
+.search-result-item.video-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.video-item img,
+.search-result-item.video-item img {
+  width: 160px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.video-details h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+.video-details p {
+  font-size: 1em;
+  color: #555;
+}
+.video-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.video-actions a,
+.video-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #ffc107;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* News Updates */
+.news-item {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.news-item img {
+  width: 160px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.news-details h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+.news-details p {
+  font-size: 1em;
+  color: #555;
+}
+.news-meta {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 5px;
+}
+.news-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.news-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #6f42c1;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* Fixed Music Player Section */
+.music-player-section {
+  position: fixed;
+  bottom: 0;
+  left: var(--aside-width); /* Adjusts for the aside navigation */
+  right: 0;
+  background: #202328;
+  color: #fff;
+  padding: 10px 15px;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  width: calc(100% - var(--aside-width)); /* Ensures it stays in the main content */
+}
+
+/* Set a default width for the aside nav */
+:root {
+  --aside-width: 200px; /* Adjust based on your actual aside nav width */
+}
+
+#music-player {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Player Layout */
+.player-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Track Information */
+.track-info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.track-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+.track-artist {
+  font-size: 0.9rem;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+/* Progress Bar */
+.progress-container {
+  flex: 3;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #444;
+  border-radius: 3px;
+  position: relative;
+}
+.progress {
+  width: 0%;
+  height: 100%;
+  background: #0af;
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+/* Controls */
+.controls {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.controls button {
+  background: #333;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.controls button:hover {
+  background: #0af;
+}
+
+/* Volume Control */
+.volume-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#volume-slider {
+  width: 80px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .music-player-section {
+    left: 0;
+    width: 100%;
+    padding: 8px;
+  }
+  
+  .player-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .track-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 3px;
+  }
+
+  .progress-container {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .controls {
+    order: 2;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .volume-container {
+    order: 3;
+    justify-content: center;
+  }
+
+  /* Reduce player height on mobile */
+  .music-player-section {
+    padding: 5px 10px;
+  }
+
+  .track-title {
+    font-size: 1rem;
+    max-width: 100px;
+  }
+
+  .track-artist {
+    font-size: 0.8rem;
+    max-width: 90px;
+  }
+
+  .controls button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  #volume-slider {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .track-info {
+    flex: 2;
+    text-align: left;
+  }
+
+  .controls {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .volume-container {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .music-player-section {
+    padding: 5px;
+  }
+
+  .controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  #volume-slider {
+    width: 50px;
+  }
+}
+
+
+/* Additional Layout & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* Detailed Sections */
+.detailed-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #eee;
+  border-radius: 1px;
+  margin-top: -60px;
+}
+
+/* Extra: Block Loop Subsection (if used) */
+.block-loop-subsection {
+  margin-top: 20px;
+}
+.block-loop-subsection h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}

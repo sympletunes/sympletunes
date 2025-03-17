@@ -1,0 +1,129 @@
+/* Define color variables for consistency */
+:root {
+  --primary-color: #007bff;
+  --primary-color-dark: #0056b3;
+  --border-color: #ccc;
+  --text-color: #333;
+  --label-color: #555;
+}
+
+/* Centering the Signup/Sign In Container */
+.signup-container {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  width: 400px; /* Increased width for better spacing */
+  max-width: 90%;
+  text-align: center;
+  overflow-y: auto; /* Allow scrolling if content exceeds container height */
+  max-height: 90vh; /* Prevent container from growing too tall */
+}
+
+/* Headings */
+.signup-container h2 {
+  color: var(--text-color);
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+/* Labels */
+.signup-container label {
+  font-size: 14px;
+  color: var(--label-color);
+  text-align: left;
+  display: block;
+  margin: 8px 0 4px;
+}
+
+/* Inputs & Select */
+.signup-container input,
+.signup-container select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.signup-container input:focus,
+.signup-container select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Buttons */
+.signup-container button {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-container button:hover {
+  background: var(--primary-color-dark);
+}
+
+/* Hidden Elements */
+.hidden {
+  display: none;
+}
+
+/* Additional styling for Profile Setup & Profile Page */
+#profileSetup, #profilePage {
+  text-align: center;
+}
+
+#profileSetup label {
+  margin-top: 10px;
+}
+
+#profileSetup input[type="file"] {
+  margin-top: 10px;
+}
+
+#profileImage, #displayProfileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Profile Page Text */
+#profilePage p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .signup-container {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .signup-container h2 {
+    font-size: 1.3em;
+  }
+  
+  #profileImage, #displayProfileImage {
+    width: 80px;
+    height: 80px;
+  }
+}

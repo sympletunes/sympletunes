@@ -1,0 +1,396 @@
+/* Slider Container */
+				  .slider {
+					position: relative;
+					width: 100%;
+					height: 500px; /* Adjust height as needed */
+					overflow: hidden;
+					font-family: sans-serif;
+				  }
+				  
+				  /* Slides Wrapper */
+				  .slides {
+					position: relative;
+					width: 100%;
+					height: 100%;
+				  }
+				  
+				  /* Individual Slides */
+				  .slide {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-size: cover;
+					background-position: center;
+					opacity: 0;
+					transform: translateY(100%);
+					transition: transform 0.6s ease, opacity 0.6s ease;
+				  }
+				  
+				  .slide.active {
+					opacity: 1;
+					transform: translateY(0);
+					z-index: 1;
+				  }
+				  
+				  /* When a slide exits, animate it upward */
+				  .slide.exit {
+					opacity: 0;
+					transform: translateY(-100%);
+					z-index: 0;
+				  }
+				  
+/* Slide Content: positioned on the left side with fading right border */
+.slide-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80%; 
+	height: 100%;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start; 
+	text-align: left; 
+	padding: 20px 40px; 
+	background: linear-gradient(
+	  to right,
+	  rgba(0, 0, 0, 0.6) 60%,
+	  rgba(0, 0, 0, 0) 100%
+	); 
+	box-sizing: border-box; 
+  }				  
+				 /* Container for the title and buttons */
+.event-title-buttons {
+	position: relative;
+	padding: 10px 20px;
+	background: #f9f9f9;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	height: 60px;
+  }
+  
+  .event-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: default;
+    z-index: 1;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.event-type svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+  
+  /* "Add Event" Button positioned at the top right of the container */
+  .add-event {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	background: #ff4b2b;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	z-index: 1;
+  }
+  
+  .add-event:hover {
+	background: #ff3210;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+	/* Event Title */
+.event-name {
+	font-size: 50px; 
+	font-weight: 900; 
+	margin-bottom: 30px;
+	margin-left: 20px;
+	color: #fff; 
+	text-transform: uppercase; 
+	letter-spacing: 2px; 
+	line-height: 1.2; 
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+	font-family: 'Montserrat', sans-serif;
+}
+
+  /* Action Buttons */
+.action-buttons {
+					display: flex;
+					justify-content: center;
+					gap: 20px;
+					margin-bottom: 30px;
+					margin-left: 20px;
+				  }
+				 /* Action Buttons */
+.action-buttons button {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+	border: 1.75px solid #fff; /* White border */
+	height: 60px;
+	width: 140px;
+	border-radius: 30px; /* Rounded corners */
+	background: transparent; /* Transparent background */
+	color: #f9f9f9; /* Light text color */
+	display: flex;
+	justify-content: center; /* Center text horizontally */
+	align-items: center; /* Center text vertically */
+	text-align: center; /* Ensure text is centered */
+  }
+  
+  /* Hover Effects */
+  .action-buttons button:hover {
+	background: #ff3210; /* Red background on hover */
+	border-color: #ff3210; /* Match border color to background */
+	color: #fff; /* White text on hover */
+  }
+  
+  /* Specific Button Hover Effects */
+  .details:hover {
+	background: #ff3210; /* Red background for "Details" button */
+	border-color: #ff3210; /* Match border color */
+  }
+  
+  .buy-ticket:hover {
+	background: #ff3210; /* Red background for "Buy Ticket" button */
+	border-color: #ff3210; /* Match border color */
+  }
+				  
+				 /* Event Info */
+.event-info {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-bottom: 40px;
+	margin-left: 30px;
+	justify-content: center;
+  }
+  
+  .event-info div {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 10px 15px;
+	border-radius: 8px;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .event-info div:hover {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .event-info svg {
+	width: 24px;
+	height: 24px;
+  }
+  
+  .event-info span {
+	color: #f9f9f9;
+	font-weight: 500;
+  }
+				  
+  .countdown {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 20px;
+	justify-content: center;
+  }
+  
+  .countdown div {
+	width: 100px;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	color: #ffcc00;
+	position: relative;
+	overflow: hidden;
+  }
+  
+  .countdown div::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #ff6b6b;
+	animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  .countdown div span:first-child {
+	font-size: 36px;
+	font-weight: 900;
+	color: #ffcc00;
+	margin-bottom: 5px;
+  }
+  
+  .countdown div span:last-child {
+	font-size: 12px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+  }
+				  
+				 /* Navigation Buttons */
+.prev, .next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.2); /* Faded background by default */
+	border: none;
+	color: #fff;
+	padding: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 2;
+	transition: background 0.3s ease, opacity 0.3s ease;
+	font-size: 24px;
+	width: 50px;
+	height: 50px;
+	opacity: 0.5; /* Faded by default */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  /* Hover effect */
+  .prev:hover, .next:hover {
+	background: rgba(0, 0, 0, 0.5); /* Slightly darker on hover */
+	opacity: 1; /* Fully visible on hover */
+	border: 2px solid #fff; /* Optional: Add a border on hover */
+  }
+  
+  /* Position the buttons */
+  .prev { left: 20px; }
+  .next { right: 20px; }
+  
+  /* Center the SVG icon inside the button */
+  .prev svg, .next svg {
+	display: block;
+	position: relative;
+	left: 5px; /* Adjust if needed to center the icon */
+  }
+				  
+				  /* Dot Navigation */
+				  .dots {
+					position: absolute;
+					bottom: 20px;
+					left: 50%;
+					transform: translateX(-50%);
+					display: flex;
+					gap: 10px;
+					z-index: 2;
+				  }
+				  .dot {
+					width: 12px;
+					height: 12px;
+					border: 2px solid rgba(255, 255, 255, 0.7);
+					border-radius: 50%;
+					background: transparent;
+					cursor: pointer;
+				  }
+				  .dot.active {
+					background: rgba(255, 255, 255, 1);
+				  }
+				  
+				  /* Responsive Tweaks */
+				  @media (max-width: 768px) {
+					.event-name { font-size: 28px; }
+					.action-buttons button { font-size: 14px; padding: 8px 16px; }
+					.event-info div { font-size: 14px; }
+					.countdown div { width: 60px; height: 60px; font-size: 14px; }
+				  }
+
+
+				  .entry-subheader {
+					display: flex;
+					overflow-x: auto;
+					white-space: nowrap;
+					padding: 10px 15px;
+					background: #121212;
+					border-bottom: 1px solid #222;
+					margin-top: 05px;
+				}
+			
+				.entry-tab {
+					background: transparent;
+					color: white;
+					border: none;
+					padding: 10px 15px;
+					margin-right: 20px;
+					cursor: pointer;
+					font-size: 14px;
+					border-radius: 5px;
+					transition: background 0.3s, color 0.3s;
+					display: flex;
+					align-items: center;
+					gap: 8px;
+				}
+			
+				.entry-tab:hover {
+					background: #242424;
+				}
+			
+				.entry-tab.active {
+					background: rgb(0, 183, 255);
+					color: white;
+				}
+			
+				/* Hide all content sections except the active one */
+				.entry-content {
+					display: none;
+					padding: 20px;
+					border-radius: 8px;
+					margin-top: 10px;
+				}
+			
+				.active-content {
+					display: block;
+				}
+			
+				/* Mobile Responsive */
+				@media (max-width: 768px) {
+					.entry-tab {
+						font-size: 12px;
+						padding: 8px 12px;
+					}
+				}

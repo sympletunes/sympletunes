@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Download Video-Symple Tunes</title>
+    <style>
+        main{
+            width: 80%;
+            position: relative;
+            left: 10%;
+            display: block;
+        }
+         h1 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Paragraph Styles */
+        #videoInfo {
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Link / Button Styles */
+        #downloadButton {
+            display: inline-block;
+            padding: 15px 30px;
+            color: white;
+            background-color: red; /* Button color */
+            border: 2px solid darkred; /* Border color */
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, border-color 0.3s;
+            position: relative;
+            top: 30px;
+            left: 40%;
+        }
+
+        /* Button Hover State Styles */
+        #downloadButton:hover {
+            background-color: darkred; /* Darker red on hover */
+            border-color: crimson; /* Change border color on hover */
+        }
+
+        /* Not Found Message Styles */
+        .not-found {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+    <header>
+        <div class="main">
+          <div class="logo">
+            <a href="#">
+              <img src="logo.jpg" alt="Symtunes Logo">
+            </a>
+          </div>
+          <div class="menu-icon">
+            <span class="material-symbols-outlined">
+              <img src="menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
+            </span>
+          </div>
+        </div>
+      
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3 class="animate-charcter">SYMPLE TUNES</h3>
+            </div>
+          </div>
+        </div>
+      
+        <nav>
+          <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="lyrics.html">Lyrics</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="update.html">Update</a></li>
+          </ul>
+        </nav>
+      </header>
+      <script>
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+      const navLinks = document.getElementById('nav-links');
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+      }
+    });
+    
+      </script>
+    
+    <main>
+        <h1>Download Music Video From Symple Tunes</h1>
+        <p id="videoInfo"></p>
+        <p style="text-align: center;">This link redirects you from our site</p>
+        <a id="downloadButton" href="#">Download Video</a>
+    </main>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get the video ID from the URL
+        const videoId = getUrlParameter('videoId');
+
+        // Display the video information and download link
+        if (videoId) {
+            const videoInfo = document.getElementById('videoInfo');
+            videoInfo.textContent = `You are about to download the video with ID: ${videoId}`;
+
+            const downloadUrl = `https://en1.savefrom.net/1-youtube-video-downloader-3vV/?url=https://www.youtube.com/watch?v=${videoId}`;
+            const downloadButton = document.getElementById('downloadButton');
+            downloadButton.href = downloadUrl;
+            downloadButton.target = '_blank'; // Open the download link in a new tab
+        } else {
+            const notFoundMessage = document.createElement('p');
+            notFoundMessage.classList.add('not-found');
+            notFoundMessage.textContent = 'No video ID provided. Please go back and try again.';
+            document.body.innerHTML = '';
+            document.body.appendChild(notFoundMessage);
+        }
+    </script>
+</body>
+</html>

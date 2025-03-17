@@ -1,0 +1,288 @@
+.edd_form fieldset{
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin-top: 2rem !important;
+  }
+  
+  .edd_form input.edd-input.required, 
+  .edd_form select.edd-select.required{
+    color: inherit !important;
+  }
+  
+  .edd_form input[type=radio]{
+    border: 1px solid rgba(130,140,150,0.3) !important;
+  }
+  
+  .edd_form input[type="email"], 
+  .edd_form input[type="password"], 
+  .edd_form input[type="tel"], 
+  .edd_form input[type="text"], 
+  .edd_form textarea,
+  .edd_form .edd-select:not(.edd-select-small){
+    padding: 0.5rem 0.75rem !important;
+    width: 100% !important;
+  }
+  
+  .edd_form fieldset{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .edd_form p,
+  .edd_form legend{
+    width: 100%;
+  }
+  
+  .edd-discount-code-field-wrap input[type="text"]{
+    width: 70% !important;
+  }
+  
+  #edd_checkout_form_wrap #edd-login-account-wrap, 
+  #edd_checkout_form_wrap #edd-new-account-wrap, 
+  #edd_checkout_form_wrap #edd_final_total_wrap, 
+  #edd_checkout_form_wrap #edd_show_discount, 
+  #edd_checkout_form_wrap .edd-cart-adjustment{
+    background-color: transparent;
+  }
+  
+  #edd_checkout_form_wrap #edd-discount-code-wrap, 
+  #edd_checkout_form_wrap #edd_show_discount{
+    border: 1px solid rgba(130,140,150,0.2);
+  }
+  
+  
+  #edd_checkout_form_wrap #edd_final_total_wrap{
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+  
+  .edd_cart_remove_item_btn{
+    width: 1.5em !important;
+    height: 1.5em !important;
+    background-image: none !important;
+    display: inline-flex !important;
+  }
+  .edd_cart_remove_item_btn:before{
+    content: '\00d7';
+    font-size: 20px;
+    line-height: 1;
+    width: 1.5rem;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  #edd_checkout_cart .edd_cart_header_row th{
+    background-color: transparent;
+  }
+  
+  #edd_checkout_cart td, 
+  #edd_checkout_cart th,
+  .edd-table td,
+  .edd-table th{
+    border: none;
+    border-bottom: 1px solid #ccc !important;
+    color: inherit;
+    padding: 0.75rem 0.5rem !important;
+  }
+  #edd_checkout_cart tfoot th,
+  .edd-table tfoot th{
+    border: none !important;
+  }
+  
+  .edd-loading-ajax.edd-loading{
+    top: 0.65rem;
+  }
+  
+  .edd-loading{
+    border-left-color: currentColor;
+  }
+  
+  #edd_checkout_cart td,
+  .edd-table td,
+  .edd-table th{
+    background-color: transparent !important;
+  }
+  .edd-table{
+    border: none !important;
+  }
+  .edd-cart-added-alert{
+    color: #888;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  
+  .edd-submit.button, 
+  .edd-submit.button.gray, 
+  .edd-submit.button:visited{
+    background-color: #222 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 2rem !important;
+    padding: .5rem 1.5rem !important;
+  }
+  
+  #your-profile .cc-address{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+  #your-profile .cc-address legend{
+    display: flex;
+    height: 2rem;
+    line-height: 2;
+    font-size: inherit;
+  }
+  #your-profile .cc-address legend:before,
+  #your-profile .cc-address legend:after{
+    content: '';
+    border-bottom: 2px solid rgba(156,160,170,0.2);
+    width: 1%;
+    height: 1rem;
+    flex: 1;
+  }
+  #your-profile .cc-address .edd-description{
+    display: none;
+  }
+  #your-profile .cc-address input,
+  #your-profile .cc-address select{
+    width: 100%;
+  }
+  #edd-card-address-wrap,
+  #edd-card-address-2-wrap{
+    width: 100%;
+  }
+  #your-profile .cc-address p{
+    flex: none;
+  }
+  .edd-cart-added-alert svg{
+    width: 10px;
+  }
+  .edd-cart-added-alert{
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #222;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1px 12px;
+  }
+  #edd-reviews p:empty,
+  #edd-reviews br{
+    display: none;
+  }
+  .edd_review,
+  #edd-reviews .comment-toolbar{
+    padding: 0;
+  }
+  #edd-reviews-form .comment-form-cookies-consent{
+    display: flex;
+  }
+  #edd-reviews-form .edd-reviews-review-title,
+  #edd-reviews-form #edd-reviews-review{
+    width: 100%;
+    max-height: 5rem;
+  }
+  .edd_review .avatar{
+    border-radius: 5rem;
+  }
+  .edd_review time{
+    color: #888;
+  }
+  @media (min-width: 600px){
+    #edd-first-name-wrap,
+    #edd-last-name-wrap,
+    #edd-card-city-wrap,
+    #edd-card-zip-wrap,
+    #edd-card-country-wrap,
+    #edd-card-state-wrap,
+    #edd-card-cvc-wrap,
+    #edd-card-name-wrap{
+      width: 50%;
+    }
+  
+    #edd-first-name-wrap,
+    #edd-card-city-wrap,
+    #edd-card-country-wrap,
+    #edd-card-cvc-wrap{
+      padding-right: 2rem;
+    }
+  }
+
+  
+  /* Styles for Social Media Menu Items */
+#menu-item-4164 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 4px; /* Further reduced space between icons in desktop */
+    padding: 5px; /* Ensures proper spacing */
+    list-style: none; /* Removes bullet points */
+}
+
+/* Styling for the social media links */
+#menu-item-4164 a {
+    display: flex; /* Flex ensures perfect alignment */
+    justify-content: center;
+    align-items: center;
+    width: 36px; /* Slightly reduced size */
+    height: 36px;
+    margin: 2px; /* Further reduced spacing */
+    border-radius: 50%; /* Ensures circular shape */
+    background-color: transparent; /* Default background */
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover effect for better UI */
+#menu-item-4164 a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Ensure SVG is responsive & fills the container */
+#menu-item-4164 svg {
+    width: 22px; /* Slightly smaller for better fit */
+    height: 22px;
+    display: block;
+}
+
+/* Style the SVG paths (icons) */
+#menu-item-4164 svg path {
+    fill: #333; /* Default icon color */
+    transition: fill 0.3s ease; /* Smooth color transition */
+}
+
+/* Change icon color on hover */
+#menu-item-4164 a:hover svg path {
+    fill: #007bff; /* Change to blue on hover */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    #menu-item-4164 {
+        flex-direction: column; /* Stack icons vertically */
+        position: fixed;
+        right: 10px; /* Align to right side of the screen */
+        top: 51%;
+        transform: translateY(-50%); /* Center vertically */
+        background: rgba(255, 255, 255, 0.8); /* Light background */
+        padding: 8px;
+        border-radius: 12px; /* Soft rounded corners */
+    }
+
+    #menu-item-4164 a {
+        width: 42px; /* Increased size in mobile */
+        height: 42px;
+        margin: 6px 0; /* More vertical spacing for clarity */
+    }
+
+    #menu-item-4164 svg {
+        width: 28px; /* Bigger icons in mobile */
+        height: 28px;
+    }
+}
+

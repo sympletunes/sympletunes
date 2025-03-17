@@ -1,0 +1,15 @@
+<!-- Custom News Section (Add your own news here) -->
+  <section id="custom-news-section">
+    <h2>Custom News Section</h2>
+    <p>Here you can add your own custom news content.</p>
+    <!-- Example custom news item -->
+    <div class="news-item">
+      <div>
+        <img src="custom-image.jpg" alt="Custom News" style="width:100%; max-height: 200px; object-fit: cover;">
+        <h3>Custom News Title</h3>
+        <p>Short description for custom news item.</p>
+        <p><strong>Source:</strong> Your source</p>
+        <button class="read-more-button" onclick="openInNewTab('http://your-news-link.com')">Read More</button>
+      </div>
+    </div>
+  </section>

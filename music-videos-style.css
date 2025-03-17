@@ -1,0 +1,136 @@
+/* Music Video Categories Section with Blue Gradient */
+#music-video-categories {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Header Row: horizontal scrolling with full width */
+  .header-row {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 5px 10px;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #005fa3;
+  }
+  .header-row::-webkit-scrollbar {
+    height: 8px;
+  }
+  .header-row::-webkit-scrollbar-track {
+    background: #005fa3;
+    border-radius: 4px;
+  }
+  .header-row::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  /* Category Items Styling */
+  .category-item {
+    flex: 0 0 auto;
+    font-family: 'Corbel', sans-serif;
+    font-size: 0.8rem;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+  }
+  .category-item:hover, .category-item.active {
+    background-color: #ffffff;
+    color: #005fa3;
+  }
+  
+  /* Details Section Styling */
+  #category-details {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #005fa3;
+    border-radius: 6px;
+    background: #f0faff;
+  }
+  .details-content {
+    display: none;
+    font-size: 0.8rem;
+  }
+  .details-content.active {
+    display: block;
+  }
+  
+  /* Video Grid Styling: 15 videos, 3 per row */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .video-item {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: #fff;
+    position: relative;
+  }
+  .video-item:hover {
+    transform: scale(1.02);
+  }
+  .video-item img {
+    width: 100%;
+    display: block;
+    height: 150px;
+    object-fit: cover;
+  }
+  .video-item h3 {
+    margin: 5px 10px 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  .video-item p {
+    margin: 0 10px 5px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  /* Video Detail Overlay Styling */
+  #video-detail-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .video-detail-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+  }
+  #video-detail-section button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  #video-detail-section img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+  

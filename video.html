@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tunes Video Page</title>
+    <link rel="stylesheet" href="videostyle.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo.jpg" alt="Symple Tunes logo" height="50">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="lyrics.html">Lyrics</a></li>
+            <li class='active'><a href="video.html">Video</a></li>
+            <li><a href="update.html">Update</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h3 class="animate-charcter">SYMPLE TUNES</h3>
+    </div>
+</header>
+<main class="container">
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for music">
+        <button id="searchButton" onclick="searchVideos()">Search</button>
+    </div>
+    <div id="searchResults" class="grid-container"></div>
+<!-- Latest Videos Section -->
+<section id="latestVideos">
+  <h2 style="color: rgb(1, 1, 83);">Latest Music Videos</h2>
+  <div id="latestVideoResults" class="latest-videos-grid"></div>
+</section>
+
+<script>
+    const apiKey = 'AIzaSyDpwTcPcqzrFI1VEppdVAHxzwOn-nnfabo'; // Replace with your own API key.
+
+    document.getElementById('searchButton').addEventListener('click', searchVideos);
+
+    function searchVideos() {
+        const searchInput = document.getElementById('searchInput').value.trim();
+        if (searchInput === '') {
+            alert('Please enter a search query.');
+            return;
+        }
+
+        const searchButton = document.getElementById('searchButton');
+        searchButton.textContent = 'Searching...';
+        searchButton.style.cursor = 'progress';
+
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchInput + " music")}&type=video&key=${apiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                displayResults(data.items);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            })
+            .finally(() => {
+                searchButton.textContent = 'Search';
+                searchButton.style.cursor = 'pointer';
+            });
+    }
+
+    function displayResults(items) {
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = '';
+
+        if (items.length === 0) {
+            const noResultsMessage = document.createElement('p');
+            noResultsMessage.textContent = 'Search video when not available on the search bar';
+            noResultsMessage.style.color = 'red';
+            searchResults.appendChild(noResultsMessage);
+        } else {
+            items.forEach(item => {
+                const videoId = item.id.videoId;
+                const title = item.snippet.title;
+                const thumbnailUrl = item.snippet.thumbnails.default.url;
+
+                const videoElement = document.createElement('div');
+                videoElement.classList.add('video-card');
+                videoElement.innerHTML = `
+                    <img src="${thumbnailUrl}" alt="${title}">
+                    <p>${title}</p>
+                    <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                    <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">Watch Video</a>
+                    <a href="download.html?videoId=${videoId}" target="_blank">Download Video</a> <!-- Link to download page -->
+                `;
+                searchResults.appendChild(videoElement);
+            });
+        }
+    }
+
+    function loadTrendingMusicTracks() {
+        const regions = [
+            { name: 'Ghana', videoCategoryId: '10' },
+            { name: 'Africa', videoCategoryId: '10' },
+            { name: 'World', videoCategoryId: '10' }
+        ];
+
+        const promises = regions.map(region => {
+            const trendingVideosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&videoCategoryId=${region.videoCategoryId}&regionCode=${region.name === 'Ghana' ? 'GH' : region.name === 'Africa' ? 'ZA' : 'US'}&maxResults=20&key=${apiKey}`;
+            
+            return fetch(trendingVideosUrl)
+                .then(response => response.json())
+                .then(data => data.items);
+        });
+
+        Promise.all(promises)
+            .then(results => {
+                const allVideos = [].concat(...results);
+                displayLatestVideos(allVideos);
+            })
+            .catch(error => {
+                console.error('Error fetching trending videos:', error);
+            });
+    }
+
+    function displayLatestVideos(items) {
+        const latestVideoResults = document.getElementById('latestVideoResults');
+        latestVideoResults.innerHTML = '';
+
+        items.forEach(item => {
+            const videoId = item.id;
+            const title = item.snippet.title;
+            const thumbnailUrl = item.snippet.thumbnails.default.url;
+
+            const videoElement = document.createElement('div');
+            videoElement.classList.add('latest-video-card');
+            videoElement.innerHTML = `
+                <img src="${thumbnailUrl}" alt="${title}">
+                <p>${title}</p>
+                <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"/>
+                    </svg>
+                </a>
+                <a href="download.html?videoId=${videoId}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                    </svg>
+                </a> <!-- Link to download page -->
+            `;
+            latestVideoResults.appendChild(videoElement);
+        });
+    }
+
+    window.onload = function() {
+        loadTrendingMusicTracks();
+    };
+</script>
+</script>
+  
+
+</main>
+
+<script src="videoscript.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,242 @@
+.main-form-sumission-section {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.form-header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.form-header div {
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.form-header div:hover {
+    background-color: #a3e5ff36;
+    transform: scale(1.1);
+}
+.active {
+    border-bottom: 3px solid #0063e4;
+    font-weight: bold;
+    color: #157aff;
+    transition: border-bottom 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.form-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.form-section.active-section {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #157aff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.buttons button:hover {
+    background-color: dark#157aff;
+    transform: scale(1.1);
+}
+@media (max-width: 600px) {
+    .form-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Flex container for better spacing */
+.flex-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Ensure size input does not shrink too much */
+.flex-container .size-input {
+    flex: 1;
+    min-width: 120px; /* Prevents shrinking on small screens */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-container .size-input {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+.error {
+    border: 1.8px solid red;
+    background-color: #ffffff;
+}
+
+.role-button {
+    padding: 10px 20px;
+    border: 2px solid #444;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.role-button:hover {
+    background-color: #ddd;
+}
+
+/* Active button style */
+.role-button.active {
+    background-color: #157aff;
+    color: rgb(241, 241, 241);
+    border-color: #001531;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px;
+}
+
+.btn {
+    padding: 5px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.btn.add {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn.remove {
+    background-color: #dc3545;
+    color: white;
+}
+/* Preloader - Fullscreen and Centered */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
+/* Preloader container (Auto-sizing for different screens) */
+.preloader-container {
+    position: relative;
+    width: 15vw; /* Adjusts dynamically based on viewport width */
+    height: 15vw;
+    max-width: 180px; /* Limits maximum size */
+    max-height: 180px;
+    min-width: 100px; /* Ensures it doesn't get too small */
+    min-height: 100px;
+}
+
+/* Centered Logo (Responsive Size) */
+.preloader-logo {
+    width: 80%; /* Adapts to container size */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Animated Gradient Ring (Scales with Container) */
+.preloader-animation {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        rgba(0, 174, 255, 0.1) 5%,
+        rgba(0, 174, 255, 0.6) 25%,
+        rgba(0, 174, 255, 1) 50%,
+        rgba(0, 174, 255, 0.6) 75%,
+        rgba(0, 174, 255, 0.1) 100%
+    );
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateLoader 1.2s linear infinite;
+}
+
+/* Smooth Circular Rotation */
+@keyframes rotateLoader {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .preloader-container {
+        width: 25vw; /* Adjusts for smaller devices */
+        height: 25vw;
+        max-width: 120px; /* Ensures readability */
+        max-height: 120px;
+    }
+}
