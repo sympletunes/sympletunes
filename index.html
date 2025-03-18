@@ -197,7 +197,12 @@ var _zxcvbnSettings = {"src":"https:\/\/demo.avtheme.com\/musik\/wp-includes\/js
 
 <li id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4059"><a href="login.html">Login</a></li>
 <li id="menu-item-4060" class="btn-link menu-item menu-item-type-post_type menu-item-object-page menu-item-4060"><a href="advertising_guidelines.html">Advertise Now</a></li>
-</ul></div></nav>
+</ul>
+
+	
+</div>
+</nav>
+
 	</div>
 </div>
 	</header>
@@ -361,6 +366,7 @@ var _zxcvbnSettings = {"src":"https:\/\/demo.avtheme.com\/musik\/wp-includes\/js
 		</section>
 	
 		<script src="main-slider.js"></script>
+	
 	</article>
 
 	<section id="community-social">
@@ -368,64 +374,603 @@ var _zxcvbnSettings = {"src":"https:\/\/demo.avtheme.com\/musik\/wp-includes\/js
 		  <h2>Community & Social</h2>
 		  <div class="grid">
 			<!-- Card 1: Trending Music Tracks and Videos -->
-			<div class="card trending-music">
-  <h3>Trending Music Tracks & Videos</h3>
-  <div class="slider-container">
-    <!-- Slide 1: Trending Tracks -->
-    <div class="slide active">
-      <a href="index.html">
-        <img src="path_to_image1.jpg" alt="Trending Tracks" class="slide-img">
-      </a>
-    </div>
-    <!-- Slide 2: Playlists (AI Mixes) -->
-    <div class="slide">
-      <a href="ai-mixes-index.html">
-        <img src="path_to_image2.jpg" alt="Playlists (AI Mixes)" class="slide-img">
-      </a>
-    </div>
-    <!-- Slide 3: Music Videos -->
-    <div class="slide">
-      <a href="music-videos-index.html">
-        <img src="path_to_image3.jpg" alt="Music Videos" class="slide-img">
-      </a>
-    </div>
-  </div>
-  <div class="dots">
-    <span class="dot active" data-index="0"></span>
-    <span class="dot" data-index="1"></span>
-    <span class="dot" data-index="2"></span>
-  </div>
+<div class="card trending-music">
+	<h3>Trending Music Tracks & Videos</h3>
+	<div class="card-slider-main-container">
+		<div class="homepage-element-one-slider-container">
+			<!-- Slide 1: Trending Tracks -->
+			<div class="homepage-element-one-slide active">
+			  <a href="trending-charts-index.html">
+				<img src="homepage-trending-music.png" alt="Trending Tracks" class="homepage-element-one-slide-img">
+			  </a>
+			</div>
+			<!-- Slide 2: Playlists (AI Mixes) -->
+			<div class="homepage-element-one-slide">
+			  <a href="music-videos-index.html">
+				<img src="homepage-trending-videos.png" alt="Playlists (AI Mixes)" class="homepage-element-one-slide-img">
+			  </a>
+			</div>
+			<!-- Slide 3: Music Videos -->
+			<div class="homepage-element-one-slide">
+			  <a href="latest-track-index.html">
+				<img src="homepage-trending-tracks.png" alt="Music Videos" class="homepage-element-one-slide-img">
+			  </a>
+			</div>
+		  </div>
+		  <div class="dots">
+			<span class="homepage-element-one-dot active" data-index="0"></span>
+			<span class="homepage-element-one-dot" data-index="1"></span>
+			<span class="homepage-element-one-dot" data-index="2"></span>
+		  </div>
+		</div>
+  
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const slides = document.querySelectorAll(".homepage-element-one-slide");
+		const dots = document.querySelectorAll(".homepage-element-one-dot");
+		let currentIndex = 0;
+		const totalSlides = slides.length;
+		const intervalTime = 6000; // 6 seconds per slide
+	  
+		function showSlide(index) {
+		  slides[currentIndex].classList.remove("active");
+		  dots[currentIndex].classList.remove("active");
+	  
+		  slides[index].classList.add("active");
+		  dots[index].classList.add("active");
+	  
+		  currentIndex = index;
+		}
+	  
+		function nextSlide() {
+		  let nextIndex = (currentIndex + 1) % totalSlides;
+		  showSlide(nextIndex);
+		}
+	  
+		// Auto-slide interval
+		let slideInterval = setInterval(nextSlide, intervalTime);
+	  
+		// Dot navigation
+		dots.forEach((dot, index) => {
+		  dot.addEventListener("click", () => {
+			clearInterval(slideInterval);
+			showSlide(index);
+			slideInterval = setInterval(nextSlide, intervalTime);
+		  });
+		});
+	  });
+	  
+	  
+</script>
 </div>
-		  
-			<!-- Card 2: Community Discussion Forums and Chatrooms -->
-			<div class="card community-discussions">
-			  <h3>Community Discussion Forums & Chatrooms</h3>
-			  <p>Details to be added...</p>
-			</div>
+  		  
+<!-- Card 2: Community Discussion Forums and Chatrooms -->
+<div class="card community-discussions">
+	<h3>Community Discussion Forums & Chatrooms</h3>
+	<div class="card-slider-main-container">
+		<div class="social-handles">
+			<a href="https://t.me/+Lg-1k6oOiKc1NGE0" target="_blank" class="social-handle">
+			  <!-- Telegram SVG Icon -->
+			  <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title/><g id="Telegram"><path d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z"/></g></svg>
+			  <span>Telegram</span>
+			</a>
+			<a href="https://chat.whatsapp.com/CQ9sjx68TJb72LPs1xIfib" target="_blank" class="social-handle">
+			  <!-- WhatsApp SVG Icon -->
+			  <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z"/></svg>
+			  <span>WhatsApp</span>
+			</a>
+			<a href="https://discord.gg/VzYrnKSs" target="_blank" class="social-handle">
+			  <!-- Discord SVG Icon -->
+			  <?xml version="1.0" ?><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464,66.52A50,50,0,0,0,414.12,17L97.64,16A49.65,49.65,0,0,0,48,65.52V392c0,27.3,22.28,48,49.64,48H368l-13-44L464,496ZM324.65,329.81s-8.72-10.39-16-19.32C340.39,301.55,352.5,282,352.5,282a139,139,0,0,1-27.85,14.25,173.31,173.31,0,0,1-35.11,10.39,170.05,170.05,0,0,1-62.72-.24A184.45,184.45,0,0,1,191.23,296a141.46,141.46,0,0,1-17.68-8.21c-.73-.48-1.45-.72-2.18-1.21-.49-.24-.73-.48-1-.48-4.36-2.42-6.78-4.11-6.78-4.11s11.62,19.09,42.38,28.26c-7.27,9.18-16.23,19.81-16.23,19.81-53.51-1.69-73.85-36.47-73.85-36.47,0-77.06,34.87-139.62,34.87-139.62,34.87-25.85,67.8-25.12,67.8-25.12l2.42,2.9c-43.59,12.32-63.44,31.4-63.44,31.4s5.32-2.9,14.28-6.77c25.91-11.35,46.5-14.25,55-15.21a24,24,0,0,1,4.12-.49,205.62,205.62,0,0,1,48.91-.48,201.62,201.62,0,0,1,72.89,22.95S333.61,145,292.44,132.7l3.39-3.86S329,128.11,363.64,154c0,0,34.87,62.56,34.87,139.62C398.51,293.34,378.16,328.12,324.65,329.81Z"/><path d="M212.05,218c-13.8,0-24.7,11.84-24.7,26.57s11.14,26.57,24.7,26.57c13.8,0,24.7-11.83,24.7-26.57C237,229.81,225.85,218,212.05,218Z"/><path d="M300.43,218c-13.8,0-24.7,11.84-24.7,26.57s11.14,26.57,24.7,26.57c13.81,0,24.7-11.83,24.7-26.57S314,218,300.43,218Z"/></svg>
+			  <span>Discord</span>
+			</a>
+			<a href="https://join.slack.com/shareDM/zt-31xiyoalx-uLps4OVmdIo13487qZn1fA" target="_blank" class="social-handle">
+			  <!-- Slack SVG Icon -->
+			  <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-147.273,357.466c20.236,0 36.767,16.531 36.767,36.767c0,20.236 -16.531,36.767 -36.767,36.767c-20.237,0 -36.767,-16.531 -36.767,-36.767l0,-36.767l36.767,0Zm-129.113,-55.293c0,-20.237 16.531,-36.767 36.767,-36.767c20.237,0 36.767,16.53 36.767,36.767l0,92.06c0,20.236 -16.53,36.767 -36.767,36.767c-20.236,0 -36.767,-16.531 -36.767,-36.767l0,-92.06Zm-18.526,0c0,20.236 -16.531,36.767 -36.767,36.767c-20.236,0 -36.767,-16.531 -36.767,-36.767c0,-20.237 16.531,-36.767 36.767,-36.767l36.767,0l0,36.767Zm239.699,36.767c20.237,-0.001 36.767,-16.532 36.767,-36.767c0,-20.237 -16.531,-36.767 -36.767,-36.767l-92.06,0c-20.237,0 -36.767,16.53 -36.767,36.767c0,20.236 16.53,36.767 36.767,36.767l92.06,0Zm0,-92.346c20.237,0 36.767,-16.531 36.767,-36.767c0,-20.236 -16.531,-36.767 -36.767,-36.767c-20.236,0 -36.767,16.531 -36.767,36.767l0,36.767l36.767,0Zm-184.406,0c20.237,0 36.767,-16.531 36.767,-36.767c0,-20.236 -16.53,-36.767 -36.767,-36.767l-92.06,0c-20.236,0 -36.767,16.531 -36.767,36.767c0,20.237 16.531,36.767 36.767,36.767l92.06,0Zm129.113,-36.767c0,20.237 -16.531,36.767 -36.767,36.767c-20.237,0 -36.767,-16.53 -36.767,-36.767l0,-92.06c0,-20.236 16.53,-36.767 36.767,-36.767c20.236,0 36.767,16.531 36.767,36.767l0,92.06Zm-92.346,-55.293l0,-36.767c0,-20.236 -16.53,-36.767 -36.767,-36.767c-20.236,0 -36.767,16.531 -36.767,36.767c0,20.236 16.531,36.767 36.767,36.767l36.767,0Z"/></svg>
+			  <span>Slack</span>
+			</a>
+		  </div>
+	</div>
+  </div>
+    
 			<!-- Card 3: Upcoming Events and Concert Listenings -->
-			<div class="card upcoming-events">
-			  <h3>Upcoming Events & Concert Listenings</h3>
-			  <p>Details to be added...</p>
+<div class="card upcoming-events">
+	<h3>Upcoming Events & Concert Listenings</h3>
+	<div class="card-slider-main-container">
+	  <div class="slider-container-upcoming-events-homepage-slider">
+		<!-- Slide 1 -->
+		<div class="slider-container-upcoming-events-homepage-slide active">
+		  <a href="trending-charts-index.html#event1">
+			<img src="homepage-event-image-1.webp" alt="Event 1">
+		  </a>
+		  <div class="slider-countdown" data-event-date="2025-05-03T00:00:00">
+			<div class="countdown-segment">
+			  <span class="time days">00</span>
+			  <span class="label">Days</span>
 			</div>
+			<div class="countdown-segment">
+			  <span class="time hours">00</span>
+			  <span class="label">Hours</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time minutes">00</span>
+			  <span class="label">Mins</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time seconds">00</span>
+			  <span class="label">Secs</span>
+			</div>
+		  </div>
+		</div>
+		<!-- Slide 2 -->
+		<div class="slider-container-upcoming-events-homepage-slide">
+		  <a href="trending-charts-index.html#event2">
+			<img src="homepage-event-image-2.webp" alt="Event 2">
+		  </a>
+		  <div class="slider-countdown" data-event-date="2025-04-03T00:00:00">
+			<div class="countdown-segment">
+			  <span class="time days">00</span>
+			  <span class="label">Days</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time hours">00</span>
+			  <span class="label">Hours</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time minutes">00</span>
+			  <span class="label">Mins</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time seconds">00</span>
+			  <span class="label">Secs</span>
+			</div>
+		  </div>
+		</div>
+		<!-- Slide 3 -->
+		<div class="slider-container-upcoming-events-homepage-slide">
+		  <a href="trending-charts-index.html#event3">
+			<img src="homepage-event-image-3.webp" alt="Event 3">
+		  </a>
+		  <div class="slider-countdown" data-event-date="2025-05-11T00:00:00">
+			<div class="countdown-segment">
+			  <span class="time days">00</span>
+			  <span class="label">Days</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time hours">00</span>
+			  <span class="label">Hours</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time minutes">00</span>
+			  <span class="label">Mins</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time seconds">00</span>
+			  <span class="label">Secs</span>
+			</div>
+		  </div>
+		</div>
+		<!-- Slide 4 -->
+		<div class="slider-container-upcoming-events-homepage-slide">
+		  <a href="trending-charts-index.html#event4">
+			<img src="homepage-event-image-4.webp" alt="Event 4">
+		  </a>
+		  <div class="slider-countdown" data-event-date="2025-04-18T00:00:00">
+			<div class="countdown-segment">
+			  <span class="time days">00</span>
+			  <span class="label">Days</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time hours">00</span>
+			  <span class="label">Hours</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time minutes">00</span>
+			  <span class="label">Mins</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time seconds">00</span>
+			  <span class="label">Secs</span>
+			</div>
+		  </div>
+		</div>
+		<!-- Slide 5 -->
+		<div class="slider-container-upcoming-events-homepage-slide">
+		  <a href="advertising_guidelines.html">
+			<img src="homepage-event-image-5.png" alt="Event 5">
+		  </a>
+		  <div class="slider-countdown" data-event-date="2025-08-20T00:00:00">
+			<div class="countdown-segment">
+			  <span class="time days">00</span>
+			  <span class="label">Days</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time hours">00</span>
+			  <span class="label">Hours</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time minutes">00</span>
+			  <span class="label">Mins</span>
+			</div>
+			<div class="countdown-segment">
+			  <span class="time seconds">00</span>
+			  <span class="label">Secs</span>
+			</div>
+		  </div>
+		</div>
+		
+		<!-- Next/Prev buttons -->
+		<a class="slider-container-upcoming-events-homepage-prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="slider-container-upcoming-events-homepage-next" onclick="plusSlides(1)">&#10095;</a>
+	  </div>
+	  
+	  <!-- Dots/Indicators -->
+	  <div class="slider-container-upcoming-events-homepage-dots">
+		<span class="slider-container-upcoming-events-homepage-dot active" onclick="currentSlide(1)"></span>
+		<span class="slider-container-upcoming-events-homepage-dot" onclick="currentSlide(2)"></span>
+		<span class="slider-container-upcoming-events-homepage-dot" onclick="currentSlide(3)"></span>
+		<span class="slider-container-upcoming-events-homepage-dot" onclick="currentSlide(4)"></span>
+		<span class="slider-container-upcoming-events-homepage-dot" onclick="currentSlide(5)"></span>
+	  </div>
+	</div>
+    
+  <!-- JavaScript -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+	let slideIndex = 1;
+	showSlides(slideIndex);
+  
+	// Expose functions globally for inline onclick attributes
+	window.plusSlides = function(n) {
+	  clearInterval(autoSlideInterval);
+	  showSlides(slideIndex += n);
+	  autoSlideInterval = setInterval(() => showSlides(slideIndex += 1), 5000);
+	};
+  
+	window.currentSlide = function(n) {
+	  clearInterval(autoSlideInterval);
+	  showSlides(slideIndex = n);
+	  autoSlideInterval = setInterval(() => showSlides(slideIndex += 1), 5000);
+	};
+  
+	function showSlides(n) {
+	  const slides = document.getElementsByClassName("slider-container-upcoming-events-homepage-slide");
+	  const dots = document.getElementsByClassName("slider-container-upcoming-events-homepage-dot");
+	  if (n > slides.length) { slideIndex = 1; }
+	  if (n < 1) { slideIndex = slides.length; }
+	  for (let i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	  }
+	  for (let i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex - 1].style.display = "block";
+	  dots[slideIndex - 1].className += " active";
+	}
+  
+	// Auto slide every 5 seconds
+	let autoSlideInterval = setInterval(function() {
+	  showSlides(slideIndex += 1);
+	}, 5000);
+  
+	// Update each countdown segment
+	function updateCountdowns() {
+	  const countdownElements = document.getElementsByClassName("slider-countdown");
+	  for (let i = 0; i < countdownElements.length; i++) {
+		const countdownEl = countdownElements[i];
+		const eventDateStr = countdownEl.getAttribute('data-event-date');
+		const eventDate = new Date(eventDateStr);
+		const now = new Date();
+		const diff = eventDate - now;
+		const daysEl = countdownEl.querySelector('.time.days');
+		const hoursEl = countdownEl.querySelector('.time.hours');
+		const minutesEl = countdownEl.querySelector('.time.minutes');
+		const secondsEl = countdownEl.querySelector('.time.seconds');
+  
+		if(diff > 0) {
+		  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+		  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+		  daysEl.innerText = days < 10 ? "0" + days : days;
+		  hoursEl.innerText = hours < 10 ? "0" + hours : hours;
+		  minutesEl.innerText = minutes < 10 ? "0" + minutes : minutes;
+		  secondsEl.innerText = seconds < 10 ? "0" + seconds : seconds;
+		} else {
+		  daysEl.innerText = "00";
+		  hoursEl.innerText = "00";
+		  minutesEl.innerText = "00";
+		  secondsEl.innerText = "00";
+		}
+	  }
+	}
+	updateCountdowns();
+	setInterval(updateCountdowns, 1000);
+  });
+  </script>
+</div>
+
 			<!-- Card 4: Symple Tunes Onboard -->
-			<div class="card symple-tunes-onboard">
-			  <h3>Symple Tunes Onboard</h3>
-			  <p>Details to be added...</p>
-			</div>
-			<!-- Card 5: Advertise and Events -->
-			<div class="card advertise-events">
-			  <h3>Advertise & Events</h3>
-			  <p>Details to be added...</p>
-			</div>
+<div class="card symple-tunes-onboard">
+	<h3>Symple Tunes Onboard</h3>
+	<div class="card-slider-main-container">
+	  <p id="typewriterText"></p>
+	</div>
+	<div class="join-btn-container">
+	  <a href="artist-hub.html" class="join-btn">Join Now</a>
+	</div>
+
+	 
+	<script>
+		// Define the three text segments
+		const segments = [
+		  "Are you an Artist, Producer, Songwriter, Sound Engineer, or more?",
+		  "Bring your musical dreams to life with Symple Tunes:",
+		  "Join now to Showcase your talent and reach a global audience!"
+		];
+	  
+		const typewriterText = document.getElementById('typewriterText');
+		let segmentIndex = 0;
+		let charIndex = 0;
+		const typeSpeed = 50;      // speed for typing (in ms)
+		const eraseSpeed = 30;     // speed for erasing (in ms)
+		const delayBetween = 2000; // delay after completing a segment (in ms)
+	  
+		function type() {
+		  if (charIndex < segments[segmentIndex].length) {
+			typewriterText.textContent += segments[segmentIndex].charAt(charIndex);
+			charIndex++;
+			setTimeout(type, typeSpeed);
+		  } else {
+			// Pause before erasing the segment
+			setTimeout(erase, delayBetween);
+		  }
+		}
+	  
+		function erase() {
+		  if (charIndex > 0) {
+			typewriterText.textContent = segments[segmentIndex].substring(0, charIndex - 1);
+			charIndex--;
+			setTimeout(erase, eraseSpeed);
+		  } else {
+			// Move to the next segment and loop indefinitely
+			segmentIndex = (segmentIndex + 1) % segments.length;
+			setTimeout(type, typeSpeed);
+		  }
+		}
+	  
+		// Start the typewriter effect when the DOM is ready
+		window.addEventListener('DOMContentLoaded', () => {
+		  type();
+		});
+	  </script>
+  </div>
+  
+ <!-- Card 5: Advertise & Events -->
+<div class="card advertise-events">
+	<h3>Advertise & Events</h3>
+	<div class="card-slider-main-container">
+	  <p id="typewriterText2"></p>
+	</div>
+	<div class="ad-events-btn-container">
+	  <a href="add-events.html" class="join-btn">Events</a>
+	  <a href="advertising_guidelines.html" class="join-btn">Advertise</a>
+	</div>
+
+	<script>
+		// Define the three advertisement text segments for events and advertising.
+		const segments2 = [
+		  "Looking to host an unforgettable event? Advertise with us!",
+		  "Connect with thousands and make your event shine.",
+		  "Promote your brand and elevate your gatherings today!"
+		];
+	  
+		const typewriterText2 = document.getElementById('typewriterText2');
+		let segmentIndex2 = 0;
+		let charIndex2 = 0;
+		const typeSpeed2 = 50;      // Typing speed in milliseconds
+		const eraseSpeed2 = 30;     // Erasing speed in milliseconds
+		const delayBetween2 = 2000; // Delay after completing a segment
+	  
+		function type2() {
+		  if (charIndex2 < segments2[segmentIndex2].length) {
+			typewriterText2.textContent += segments2[segmentIndex2].charAt(charIndex2);
+			charIndex2++;
+			setTimeout(type2, typeSpeed2);
+		  } else {
+			// Pause before erasing the segment
+			setTimeout(erase2, delayBetween2);
+		  }
+		}
+	  
+		function erase2() {
+		  if (charIndex2 > 0) {
+			typewriterText2.textContent = segments2[segmentIndex2].substring(0, charIndex2 - 1);
+			charIndex2--;
+			setTimeout(erase2, eraseSpeed2);
+		  } else {
+			// Move to the next segment and loop indefinitely
+			segmentIndex2 = (segmentIndex2 + 1) % segments2.length;
+			setTimeout(type2, typeSpeed2);
+		  }
+		}
+	  
+		// Start the typewriter effect when the DOM is ready
+		window.addEventListener('DOMContentLoaded', () => {
+		  type2();
+		});
+	  </script>
+  </div>
+
 			<!-- Card 6: Social Media Feeds -->
-			<div class="card social-media-feeds">
-			  <h3>Social Media Feeds</h3>
-			  <p>Details to be added...</p>
-			</div>
+<div class="card social-media-feeds">
+	<h3>Social Media Feeds</h3>
+	<div class="card-slider-main-container">
+	  <p id="typewriterText3"></p>
+	</div>
+	<div class="social-icons-container" id="socialIconsContainer">
+	  <!-- Rotating icons will appear here -->
+	</div>
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			/* ================================
+				 Typewriter Effect for Promotional Text
+			================================= */
+			const promoTexts = [
+			  "Engage, explore, and elevate your music experience with Symple Tunes.",
+			  "  Follow us on social media for exclusive updates!",
+			  "Connect with Symple Tunes on our official social media platforms"
+			];
+		  
+			const typewriterText3 = document.getElementById('typewriterText3');
+			let textIndex = 0;
+			let charIndex = 0;
+			const typeSpeed = 50;  // Typing speed in milliseconds
+			const eraseSpeed = 30; // Erasing speed in milliseconds
+			const delayBetween = 2000; // Delay after text is fully typed
+		  
+			function typeText() {
+			  if (charIndex < promoTexts[textIndex].length) {
+				typewriterText3.textContent += promoTexts[textIndex].charAt(charIndex);
+				charIndex++;
+				setTimeout(typeText, typeSpeed);
+			  } else {
+				setTimeout(eraseText, delayBetween);
+			  }
+			}
+		  
+			function eraseText() {
+			  if (charIndex > 0) {
+				typewriterText3.textContent = promoTexts[textIndex].substring(0, charIndex - 1);
+				charIndex--;
+				setTimeout(eraseText, eraseSpeed);
+			  } else {
+				textIndex = (textIndex + 1) % promoTexts.length; // Switch to the next text
+				setTimeout(typeText, typeSpeed);
+			  }
+			}
+	
+		typeText(); // Start the typewriter effect
+		  
+			/* ================================
+				 Social Media Icons Rotation
+			================================= */
+			const socialIcons = [
+			  `<a href="https://web.facebook.com/profile.php?id=61567149111821" target="_blank">
+				<?xml version="1.0" ?>
+							<svg id="Layer_1" width="20" height="20" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<style type="text/css">
+									.st0{fill:none;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;}
+								</style>
+								<title>Facebook</title>
+								<g>
+									<path class="st0" d="M36.3125,26.243055h8.625v8.625002h-8.625v20.125h-8.625v-20.125h-8.625v-8.625002h8.625V22.63493v-2.417885   
+									c0-6.198838,5.02515-11.223989,11.223991-11.223989h0.000008H44.9375v8.625h-6.037502   
+									c-1.429035,0-2.587498,1.158463-2.587498,2.5875V26.243055z"/>
+								</g>
+							</svg>
+			  </a>`,
+			  `<a href="https://www.instagram.com/sympletunes/" target="_blank">
+				<?xml version="1.0" ?>
+							<svg width="20" height="20" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+								<title>Instagram</title>
+								<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+							</svg>
+			  </a>`,
+			  `<a href="https://twitter.com/SympleTunes" target="_blank">
+				<?xml version="1.0" ?>
+							<svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 1200 1227" fill="none">
+								<g clip-path="url(#clip0_1_2)">
+									<path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="black"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_1_2">
+										<rect width="1200" height="1227" fill="white"/>
+									</clipPath>
+								</defs>
+							</svg>
+			  </a>`,
+			  `<a href="https://www.linkedin.com/in/symple-tunes-8bb825302" target="_blank">
+				<?xml version="1.0" ?>
+							<svg enable-background="new 0 0 32 32" height="20px" width="20px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<g id="LinkedIn">
+									<path d="M4.983,8.875H4.94C2.657,8.875,1,7.361,1,5.275c0-2.089,1.692-3.606,4.023-3.606   c2.292,0,3.928,1.476,3.977,3.589C9,7.359,7.311,8.875,4.983,8.875z M5.023,2.669C3.243,2.669,2,3.741,2,5.275   c0,1.531,1.209,2.601,2.94,2.601h0.043C6.76,7.875,8,6.804,8,5.27C7.963,3.694,6.795,2.669,5.023,2.669z" fill="#263238"/>
+									<path d="M7.5,29h-5C2.224,29,2,28.776,2,28.5v-18C2,10.224,2.224,10,2.5,10h5C7.776,10,8,10.224,8,10.5v18   C8,28.776,7.776,29,7.5,29z M3,28h4V11H3V28z" fill="#263238"/>
+									<path d="M30.5,29h-6c-0.276,0-0.5-0.224-0.5-0.5V19c0-1.654-1.346-3-3-3s-3,1.346-3,3v9.5   c0,0.276-0.224,0.5-0.5,0.5h-6c-0.276,0-0.5-0.224-0.5-0.5v-18c0-0.276,0.224-0.5,0.5-0.5h6c0.276,0,0.5,0.224,0.5,0.5v3.014   c0,0.276-0.224,0.5-0.5,0.5s-0.5-0.224-0.5-0.5V11h-5v17h5v-9c0-2.206,1.794-4,4-4s4,1.794,4,4v9h5V17.5c0-3.584-2.916-6.5-6.5-6.5   c-1.384,0-2.722,0.406-3.871,1.173c-0.229,0.152-0.54,0.092-0.693-0.138s-0.092-0.54,0.139-0.693C20.388,10.464,21.918,10,23.5,10   c4.136,0,7.5,3.364,7.5,7.5v11C31,28.776,30.776,29,30.5,29z" fill="#263238"/>
+								</g>
+							</svg>
+			  </a>`,
+			  `<a href="https://www.youtube.com/@SympleTunes" target="_blank">
+				<?xml version="1.0" ?>
+							<svg height="20px" id="Layer_1" style="enable-background:new 0 0 512 512;" width="20px" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<g>
+									<g>
+										<path d="M265,96c65.3,0,118.7,1.1,168.1,3.3l0.7,0h0.7c23.1,0,42,22,42,49.1v1.1l0.1,1.1c2.3,34,3.4,69.3,3.4,104.9v0v0    c0.1,35.6-1.1,70.9-3.4,104.9l-0.1,1.1v1.1c0,13.8-4.7,26.6-13.4,36.1c-7.8,8.6-18,13.4-28.6,13.4h-0.8l-0.8,0    c-52.9,2.5-108.8,3.8-166.4,3.8c-3.5,0-7.1,0-10.6,0H256h-0.1c-3.6,0-7.2,0-10.8,0c-57.8,0-113.7-1.3-166.2-3.7l-0.8,0h-0.8    c-10.6,0-20.7-4.8-28.5-13.4c-8.6-9.5-13.4-22.3-13.4-36.1v-1.1l-0.1-1.1c-2.4-34.1-3.5-69.4-3.3-104.7v-0.1v-0.1    c-0.1-35.3,1-70.5,3.3-104.6l0.1-1.1v-1.1c0-27.2,18.8-49.3,41.9-49.3H78l0.7,0c49.5-2.3,102.9-3.3,168.2-3.3h9H265 M265,64    c-3,0-6,0-9,0s-6,0-9,0c-57.6,0-114.2,0.8-169.6,3.3c-40.8,0-73.9,36.3-73.9,81.3C1,184.4-0.1,220,0,255.7    c-0.1,35.7,0.9,71.3,3.4,107c0,45,33.1,81.6,73.9,81.6c54.8,2.6,110.7,3.8,167.8,3.8c3.6,0,7.3,0,10.9,0c3.6,0,7.2,0,10.7,0    c57.1,0,113-1.2,167.9-3.8c40.9,0,74-36.6,74-81.6c2.4-35.7,3.5-71.4,3.4-107.1c0.1-35.7-1-71.3-3.4-107.1c0-45-33.1-81.1-74-81.1    C379.2,64.8,322.7,64,265,64L265,64z"/>
+									</g>
+									<g>
+										<path d="M207,353.8V157.4l145,98.2L207,353.8z"/>
+									</g>
+								</g>
+							</svg>
+			  </a>`,
+			  `<a href="https://www.snapchat.com/add/sympletunes" target="_blank">
+										<?xml version="1.0" ?>
+							<svg viewBox="0 0 512 512" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg">
+								<path d="M496.926,366.6c-3.373-9.176-9.8-14.086-17.112-18.153-1.376-.806-2.641-1.451-3.72-1.947-2.182-1.128-4.414-2.22-6.634-3.373-22.8-12.09-40.609-27.341-52.959-45.42a102.889,102.889,0,0,1-9.089-16.12c-1.054-3.013-1-4.724-.248-6.287a10.221,10.221,0,0,1,2.914-3.038c3.918-2.591,7.96-5.22,10.7-6.993,4.885-3.162,8.754-5.667,11.246-7.44,9.362-6.547,15.909-13.5,20-21.278a42.371,42.371,0,0,0,2.1-35.191c-6.2-16.318-21.613-26.449-40.287-26.449a55.543,55.543,0,0,0-11.718,1.24c-1.029.224-2.059.459-3.063.72.174-11.16-.074-22.94-1.066-34.534-3.522-40.758-17.794-62.123-32.674-79.16A130.167,130.167,0,0,0,332.1,36.443C309.515,23.547,283.91,17,256,17S202.6,23.547,180,36.443a129.735,129.735,0,0,0-33.281,26.783c-14.88,17.038-29.152,38.44-32.673,79.161-.992,11.594-1.24,23.435-1.079,34.533-1-.26-2.021-.5-3.051-.719a55.461,55.461,0,0,0-11.717-1.24c-18.687,0-34.125,10.131-40.3,26.449a42.423,42.423,0,0,0,2.046,35.228c4.105,7.774,10.652,14.731,20.014,21.278,2.48,1.736,6.361,4.24,11.246,7.44,2.641,1.711,6.5,4.216,10.28,6.72a11.054,11.054,0,0,1,3.3,3.311c.794,1.624.818,3.373-.36,6.6a102.02,102.02,0,0,1-8.94,15.785c-12.077,17.669-29.363,32.648-51.434,44.639C32.355,348.608,20.2,352.75,15.069,366.7c-3.868,10.528-1.339,22.506,8.494,32.6a49.137,49.137,0,0,0,12.4,9.387,134.337,134.337,0,0,0,30.342,12.139,20.024,20.024,0,0,1,6.126,2.741c3.583,3.137,3.075,7.861,7.849,14.78a34.468,34.468,0,0,0,8.977,9.127c10.019,6.919,21.278,7.353,33.207,7.811,10.776.41,22.989.881,36.939,5.481,5.778,1.91,11.78,5.605,18.736,9.92C194.842,480.951,217.707,495,255.973,495s61.292-14.123,78.118-24.428c6.907-4.24,12.872-7.9,18.489-9.758,13.949-4.613,26.163-5.072,36.939-5.481,11.928-.459,23.187-.893,33.206-7.812a34.584,34.584,0,0,0,10.218-11.16c3.434-5.84,3.348-9.919,6.572-12.771a18.971,18.971,0,0,1,5.753-2.629A134.893,134.893,0,0,0,476.02,408.71a48.344,48.344,0,0,0,13.019-10.193l.124-.149C498.389,388.5,500.708,376.867,496.926,366.6Zm-34.013,18.277c-20.745,11.458-34.533,10.23-45.259,17.137-9.114,5.865-3.72,18.513-10.342,23.076-8.134,5.617-32.177-.4-63.239,9.858-25.618,8.469-41.961,32.822-88.038,32.822s-62.036-24.3-88.076-32.884c-31-10.255-55.092-4.241-63.239-9.858-6.609-4.563-1.24-17.211-10.341-23.076-10.739-6.907-24.527-5.679-45.26-17.075-13.206-7.291-5.716-11.8-1.314-13.937,75.143-36.381,87.133-92.552,87.666-96.719.645-5.046,1.364-9.014-4.191-14.148-5.369-4.96-29.189-19.7-35.8-24.316-10.937-7.638-15.748-15.264-12.2-24.638,2.48-6.485,8.531-8.928,14.879-8.928a27.643,27.643,0,0,1,5.965.67c12,2.6,23.659,8.617,30.392,10.242a10.749,10.749,0,0,0,2.48.335c3.6,0,4.86-1.811,4.612-5.927-.768-13.132-2.628-38.725-.558-62.644,2.84-32.909,13.442-49.215,26.04-63.636,6.051-6.932,34.484-36.976,88.857-36.976s82.88,29.92,88.931,36.827c12.611,14.421,23.225,30.727,26.04,63.636,2.071,23.919.285,49.525-.558,62.644-.285,4.327,1.017,5.927,4.613,5.927a10.648,10.648,0,0,0,2.48-.335c6.745-1.624,18.4-7.638,30.4-10.242a27.641,27.641,0,0,1,5.964-.67c6.386,0,12.4,2.48,14.88,8.928,3.546,9.374-1.24,17-12.189,24.639-6.609,4.612-30.429,19.343-35.8,24.315-5.568,5.134-4.836,9.1-4.191,14.149.533,4.228,12.511,60.4,87.666,96.718C468.629,373.011,476.119,377.524,462.913,384.877Z"/>
+							</svg>
+			  </a>`,
+			  `<a href="https://whatsapp.com/channel/0029Vb37B6PDp2Q4UxUhH20R" target="_blank">
+				<?xml version="1.0" ?>
+							<svg height="20px" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="M373.295,307.064c-6.37,-3.188 -37.687,-18.596 -43.526,-20.724c-5.838,-2.126 -10.084,-3.187 -14.331,3.188c-4.246,6.376 -16.454,20.725 -20.17,24.976c-3.715,4.251 -7.431,4.785 -13.8,1.594c-6.37,-3.187 -26.895,-9.913 -51.225,-31.616c-18.935,-16.89 -31.72,-37.749 -35.435,-44.126c-3.716,-6.377 -0.397,-9.824 2.792,-13c2.867,-2.854 6.371,-7.44 9.555,-11.16c3.186,-3.718 4.247,-6.377 6.37,-10.626c2.123,-4.252 1.062,-7.971 -0.532,-11.159c-1.591,-3.188 -14.33,-34.542 -19.638,-47.298c-5.171,-12.419 -10.422,-10.737 -14.332,-10.934c-3.711,-0.184 -7.963,-0.223 -12.208,-0.223c-4.246,0 -11.148,1.594 -16.987,7.969c-5.838,6.377 -22.293,21.789 -22.293,53.14c0,31.355 22.824,61.642 26.009,65.894c3.185,4.252 44.916,68.59 108.816,96.181c15.196,6.564 27.062,10.483 36.312,13.418c15.259,4.849 29.145,4.165 40.121,2.524c12.238,-1.827 37.686,-15.408 42.995,-30.286c5.307,-14.882 5.307,-27.635 3.715,-30.292c-1.592,-2.657 -5.838,-4.251 -12.208,-7.44m-116.224,158.693l-0.086,0c-38.022,-0.015 -75.313,-10.23 -107.845,-29.535l-7.738,-4.592l-80.194,21.037l21.405,-78.19l-5.037,-8.017c-21.211,-33.735 -32.414,-72.726 -32.397,-112.763c0.047,-116.825 95.1,-211.87 211.976,-211.87c56.595,0.019 109.795,22.088 149.801,62.139c40.005,40.05 62.023,93.286 62.001,149.902c-0.048,116.834 -95.1,211.889 -211.886,211.889m180.332,-392.224c-48.131,-48.186 -112.138,-74.735 -180.335,-74.763c-140.514,0 -254.875,114.354 -254.932,254.911c-0.018,44.932 11.72,88.786 34.03,127.448l-36.166,132.102l135.141,-35.45c37.236,20.31 79.159,31.015 121.826,31.029l0.105,0c140.499,0 254.87,-114.366 254.928,-254.925c0.026,-68.117 -26.467,-132.166 -74.597,-180.352" id="WhatsApp-Logo"/>
+							</svg>
+			  </a>`,
+			  `<a href="https://www.tiktok.com/@sympletunes" target="_blank">
+				<svg width="20" height="20" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+								<path d="M168,106a95.9,95.9,0,0,0,56,18V84a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.3V89.1A68,68,0,1,0,168,156Z" 
+									  fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+							</svg>
+			  </a>`,
+			  `<a href="https://t.me/sympletunes" target="_blank">
+				<svg width="20" height="20" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+								<title>Telegram Icon</title>
+								<path d="M88,134.9,177.9,214a8,8,0,0,0,13.1-4.2L228.6,45.6a8,8,0,0,0-10.7-9.2L33.3,108.9c-7.4,2.9-6.4,13.7,1.4,15.3Z" 
+									  fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+								<line x1="88" y1="134.9" x2="224.1" y2="36.6" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+								<path d="M132.9,174.4l-31.2,31.2A8,8,0,0,1,88,200V134.9" 
+									  fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+							</svg>
+			  </a>`
+			];
+		  
+			const socialIconsContainer = document.getElementById('socialIconsContainer');
+			let iconStartIndex = 0;
+		  
+			function showNextSocialIcons() {
+			  socialIconsContainer.innerHTML = ""; // Clear current icons
+			  for (let i = 0; i < 3; i++) {
+				const idx = (iconStartIndex + i) % socialIcons.length;
+				socialIconsContainer.innerHTML += socialIcons[idx];
+			  }
+			  iconStartIndex = (iconStartIndex + 3) % socialIcons.length;
+			}
+		  
+			showNextSocialIcons(); // Show initial icons
+			setInterval(showNextSocialIcons, 5000); // Rotate icons every 3 seconds
+		  });
+		  
+	</script>
+  </div>
+ 
 			<!-- Card 7: News and Industry Updates -->
 			<div class="card news-industry-updates">
 			  <h3>News & Industry Updates</h3>
-			  <p>Details to be added...</p>
+			  <div class="card-slider-main-container">
+			slider goes  
+			</div>
 			</div>
 			<!-- Card 8: Podcasts and Radios -->
 			<div class="card podcasts-radios">
