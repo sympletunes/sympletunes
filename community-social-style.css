@@ -1,71 +1,456 @@
+/* -----------------------------
+   Community Social Styling
+------------------------------ */
+#community-social {
+  background: #121212;
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
 
-	/* Container styling */
-    #community-social {
-        background: #121212;
-        color: #fff;
-        padding: 2rem;
-        font-family: 'Roboto', sans-serif;
-      }
-      
-      #community-social .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      
-      #community-social h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        font-size: 2.5rem;
-      }
-      
-      /* Grid layout for cards */
-      #community-social .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-      
-      /* Card styling */
-      #community-social .card {
-        background: #1e1e1e;
-        border-radius: 8px;
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        transition: transform 0.3s ease;
-      }
-      
-      #community-social .card:hover {
-        transform: translateY(-5px);
-      }
-      
-      #community-social .card h3 {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-        font-size: 1.5rem;
-        color: #2bbbfd;
-      }
-      
-      #community-social .card p {
-        margin: 0.5rem 0;
-        line-height: 1.5;
-      }
-      
-      /* Responsive embed container (if needed for media) */
-      .responsive-embed {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        border-radius: 4px;
-      }
-      
-      .responsive-embed iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+#community-social .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-      
+#community-social h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+#community-social .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+#community-social .card {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  height: 350px;
+}
+
+#community-social .card:hover {
+  transform: translateY(-5px);
+}
+
+#community-social .card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #2bbbfd;
+}
+
+#community-social .card p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.responsive-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.responsive-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* -----------------------------
+   Trending Music Card & Slider
+------------------------------ */
+
+/* Card Styling */
+.card.trending-music {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+/* Slider Main Container including Dots */
+.card-slider-main-container {
+  background: #555;
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  height: 260px;
+  border-radius: 8px
+}
+
+/* Slider Container with blended background (no border) */
+.homepage-element-one-slider-container {
+  position: relative;
+  overflow: hidden;
+  height: 225px; /* Fixed height for the container */
+  background: linear-gradient(135deg, #2f2f2f, #3a3a3a); /* Blended background */
+  /* Border removed to blend with the main background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  margin-bottom: 0px;
+  position: relative;
+  top: -10px;
+}
+
+/* Individual Slides with Zoom In/Out Effect */
+.homepage-element-one-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* Active Slide */
+.homepage-element-one-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.homepage-element-one-slide:not(.active) {
+  pointer-events: none;
+}
+
+
+/* Slide Image Styling */
+.homepage-element-one-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Dots Container */
+.dots {
+  margin-top: -5px;
+  text-align: center;
+}
+
+/* Dot Styling */
+.homepage-element-one-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #dfdfdf;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Active Dot */
+.homepage-element-one-dot.active {
+  background-color: #0089fa;
+}
+
+/* Card Styling for Community Discussions */
+.card.community-discussions {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Social Handles Container */
+.social-handles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two icons per row */
+  gap: 15px; /* Spacing between icons */
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  margin-right: 05px;
+}
+
+/* Individual Social Handle with Modern Border */
+.social-handle {
+  text-decoration: none;
+  color: inherit;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #444; /* Subtle initial border */
+  border-radius: 8px;
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* SVG Icon Styling */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, fill 0.3s ease;
+  margin-bottom: 8px;
+}
+
+/* Hover Effect for Social Handle */
+.social-handle:hover {
+  transform: scale(1.1);
+  color: #0089fa;
+  border-color: #0089fa; /* Change border color on hover */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect for SVG Icon */
+.social-handle:hover .social-icon {
+  transform: scale(1.2);
+  fill: #0089fa; /* Change icon color on hover */
+}
+
+
+.slider-container-upcoming-events-homepage-slider {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.slider-container-upcoming-events-homepage-slide {
+  display: none;
+  position: relative;
+}
+.slider-container-upcoming-events-homepage-slide img {
+  width: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+  height: 200px;
+  object-fit: cover;
+}
+/* Countdown Container */
+.slider-countdown {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 4px;
+  z-index: 2;
+}
+/* Each Countdown Segment as a Small Circle */
+.countdown-segment {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #333;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+/* Animated Border on Each Segment */
+.countdown-segment::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #00a9ec;
+  animation: spin 2s linear infinite;
+  z-index: -1;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.countdown-segment .time {
+  font-weight: bold;
+  line-height: 1;
+}
+.countdown-segment .label {
+  font-size: 8px;
+  line-height: 1;
+}
+/* Next & previous buttons */
+.slider-container-upcoming-events-homepage-prev,
+.slider-container-upcoming-events-homepage-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  z-index: 10;
+}
+.slider-container-upcoming-events-homepage-prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+.slider-container-upcoming-events-homepage-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* Dots */
+.slider-container-upcoming-events-homepage-dots {
+  text-align: center;
+  padding: 10px 0;
+  background: none;
+}
+.slider-container-upcoming-events-homepage-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.slider-container-upcoming-events-homepage-dot.active,
+.slider-container-upcoming-events-homepage-dot:hover {
+  background-color: #00a9ec;
+}
+
+
+
+.card.symple-tunes-onboard h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card-slider-main-container {
+  min-height: 100px;
+  margin: 0 20px;
+}
+#typewriterText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  /* Modern outline using multiple text-shadows */
+  text-shadow: 
+  -1px -1px 0 #fff,  
+   1px -1px 0 #fff,
+  -1px  1px 0 #fff,
+   1px  1px 0 #fff,
+   2px 2px 5px rgba(0,0,0,0.2);
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #222;
+}
+
+#typewriterText2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  /* Modern outline using multiple text-shadows */
+  text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff,
+     2px 2px 5px rgba(0,0,0,0.2);
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #222;
+}
+
+
+#typewriterText3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  /* Modern outline using multiple text-shadows */
+  text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff,
+     2px 2px 5px rgba(0,0,0,0.2);
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #222;
+}
+.join-btn-container {
+  margin-top: -18px;
+  display: flex; 
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically (not necessary here but good practice) */
+
+}
+.join-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  background: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.join-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.ad-events-btn-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 20px; /* Space between buttons */
+  margin-top: -18px; /* Push buttons to the bottom */
+  padding-bottom: 20px; /* Adds some space from the bottom */
+}
+.social-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust spacing between icons */
+  padding: 10px;
+  margin-top: -35px;
+}
+
+.social-icons-container a {
+  flex: 1 1 30%; /* This ensures three items fit in a row */
+  max-width: 60px; /* Adjust icon size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d6d6d6;
+  border-radius: 50%; /* Makes it a perfect circle */
+  height: 60px; /* Ensure uniform height */
+  width: 60px; /* Ensure uniform width */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icons-container a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons-container a img, 
+.social-icons-container a svg {
+  width: 30px; /* Adjust icon size inside */
+  height: 30px;
+  fill: #333; /* Adjust icon color */
+}
+
