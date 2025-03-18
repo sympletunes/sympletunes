@@ -24,6 +24,8 @@
     align-items: center;
     overflow: hidden;
 }
+
+
 .slider-container {
     position: relative;
     width: 90%;
@@ -114,7 +116,7 @@
 .add_to_cart_inline {
     display: flex;
     align-items: center;
-    gap: 25px; /* Increased space between buttons */
+    gap: 25px;
 }
 
 .action-btn {
@@ -147,3 +149,22 @@
     width: 18px;
     height: 18px;
 }
+
+/* Mobile view adjustments: show only active slide */
+@media only screen and (max-width: 600px) {
+    .slide {
+      display: none; /* Hide all slides by default */
+    }
+    .slide.active {
+      display: block; /* Show only the active slide */
+      position: relative;
+      transform: translateX(0) scale(1);
+      width: 100%;
+      height: auto; /* Adjust as needed */
+      z-index: 3;
+    }
+    .slider-wrapper {
+      height: auto; /* Let the image dictate the height */
+    }
+  }
+  
